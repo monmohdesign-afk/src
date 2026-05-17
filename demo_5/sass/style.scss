@@ -1,0 +1,2906 @@
+@use "sass:map";
+
+// ================================================================================
+// font
+// ================================================================================
+$ja1-noto: "Noto Sans JP", sans-serif;
+$ja2-kiwi: "Kiwi Maru", sans-serif;
+$en1-courgette: "Courgette", sans-serif;
+$en2-josefin: "Josefin Sans", sans-serif;
+
+
+// ================================================================================
+// responsive
+// ================================================================================
+$breakpoints: (
+    1200: "screen and (min-width: 1200px)",
+    1000: "screen and (min-width: 1000px)",
+    // 900: "screen and (min-width: 1000px)",
+    pc: "screen and (min-width: 768px)",
+    sp: "screen and (max-width: 767px)",
+);
+
+@mixin mq($breakpoint: pc) {
+    @media #{map.get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+
+// ================================================================================
+// contents
+// ================================================================================
+body {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #4A3636;
+    background-color: #E9F6F8;
+    overflow-x: hidden;
+
+    &.is-fixed {
+        overflow: hidden;
+    }
+}
+
+a {
+    text-decoration: none;
+    vertical-align: bottom;
+}
+
+li {
+    list-style: none;
+}
+
+.wrapper {
+    overflow: hidden;
+}
+
+.inner {
+    margin-inline: auto;
+    padding-inline: 20px;
+    width: 100%;
+    // max-width: calc(335px + 40px);
+    // max-width: 500px;
+
+    @include mq(pc) {
+        padding-inline: 24px;
+        max-width: calc(1024px + 48px);
+    }
+}
+
+// ====================
+// sec-ttl
+// ====================
+.sec-ttl {
+    position: relative;
+    padding-top: 42px;
+    text-align: center;
+
+    @include mq(pc) {
+        padding-top: 51px;
+    }
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        content: "";
+        width: 37px;
+        height: 37px;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+
+        @include mq(pc) {
+            width: 48px;
+            height: 48px;
+        }
+    }
+}
+
+.sec-ttl_en {
+    font-family: $en1-courgette;
+    font-size: 16px;
+
+    @include mq(pc) {
+        font-size: 20px;
+    }
+}
+
+.sec-ttl_ja {
+    display: inline-block;
+    // margin-top: 6px;
+    padding-bottom: 1px;
+    border-bottom: 6px solid #FFEE56;
+    font-family: $ja2-kiwi;
+    font-weight: 500;
+    font-size: 20px;
+
+    @include mq(pc) {
+        font-size: 32px;
+    }
+}
+
+// ====================
+// btn
+// ====================
+.btn-1,
+.btn-2 {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 4px 22px 6px;
+    border-radius: 40px;
+    border: 2px solid #4A3636;
+    box-shadow: 0 4px 0 0 #4A3636;
+    background-color: #fff;
+    text-align: center;
+    margin-inline: auto;
+    transition: all 0.5s;
+
+    &:hover {
+        background-color: #FFEE56;
+    }
+
+    // @include mq(pc) {
+    //     font-size: 14px;
+    // }
+}
+
+.btn-2 {
+    @include mq(pc) {
+        padding: 10px 38px;
+        font-size: 20px;
+    }
+}
+
+.hidden-pc {
+    display: none;
+
+    @include mq(pc) {
+        display: block;
+    }
+}
+
+.hidden-sp {
+    display: block;
+
+    @include mq(pc) {
+        display: none;
+    }
+}
+
+.hidden-pc-1000 {
+    display: none;
+
+    @include mq(1000) {
+        display: block;
+    }
+}
+
+.hidden-sp-1000 {
+    display: block;
+
+    @include mq(1000) {
+        display: none;
+    }
+}
+
+.hidden-pc-1200 {
+    display: none;
+
+    @include mq(1200) {
+        display: block;
+    }
+}
+
+
+
+// ========================================
+// header
+// ========================================
+.header {
+    width: 100%;
+    height: 64px;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.header-inner {
+    margin-inline: auto;
+    padding-inline: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: inherit;
+
+    @include mq(pc) {
+        padding-inline: 24px;
+    }
+}
+
+// ====================
+// header-logo
+// ====================
+.header-logo {
+    a {
+        img {
+            display: block;
+            width: 210px;
+
+            @include mq(pc) {
+                width: 183px;
+            }
+        }
+    }
+}
+
+// ====================
+// header-nav
+// ====================
+.header-nav {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.header-links {
+    display: flex;
+    align-items: center;
+
+    li {
+        &:nth-child(n+2) {
+            margin-left: 12px;
+        }
+
+        a {
+            font-size: 12px;
+        }
+    }
+}
+
+.header-btn {
+    font-size: 14px;
+}
+
+
+// ====================
+// hamburger
+// ====================
+.hamburger {
+    margin-left: auto;
+    line-height: 0;
+}
+
+.drawer-icon {
+    width: 32px;
+    height: 28px;
+    position: relative;
+
+    &.is-checked {
+        .drawer-icon_bar {
+            &:nth-of-type(1) {
+                top: 10px;
+                transform: rotate(30deg);
+                width: 32px;
+            }
+
+            &:nth-of-type(2) {
+                display: none;
+            }
+
+            &:nth-of-type(3) {
+                top: 10px;
+                transform: rotate(-30deg);
+            }
+        }
+    }
+}
+
+.drawer-icon_bar {
+    position: absolute;
+    left: 0;
+    width: 32px;
+    height: 3px;
+    border-radius: 6px;
+    background: #4A3636;
+    transition: all 0.3s;
+
+    &:nth-of-type(1) {
+        top: 0;
+        left: 0;
+        width: 25.6px;
+    }
+
+    &:nth-of-type(2) {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &:nth-of-type(3) {
+        bottom: 0;
+    }
+
+    .drawer-icon_dot {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: calc(32px - 4.8px);
+        width: 4.8px;
+        height: 3px;
+        border-radius: 6px;
+        background: #4A3636;
+    }
+}
+
+// ====================
+// drawer-menu
+// ====================
+.drawer-content {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    z-index: 20;
+    display: none;
+    width: 100%;
+    height: calc(100dvh - 64px);
+    padding-block: 82px;
+    overflow-y: auto;
+    background: #fff;
+}
+
+.drawer-content_menu {
+    width: fit-content;
+    margin: auto;
+    text-align: center;
+}
+
+.drawer-link {
+    &:nth-child(n+2) {
+        margin-top: 39px;
+    }
+
+    a {
+        display: block;
+        // font-size: 16px;
+        // font-weight: 400;
+        // line-height: 1.572;
+        // color: #fff;
+        text-align: center;
+        // text-decoration-line: underline;
+        // text-decoration-color: transparent;
+        // text-underline-offset: 4px;
+        transition: all 0.5s;
+
+        &:hover {
+            color: #67b0c7;
+            text-decoration-color: #67b0c7;
+        }
+    }
+}
+
+.drawer-btn {
+    margin-top: 40px;
+}
+
+
+
+// ========================================
+// mv
+// ========================================
+.mv {
+    margin-top: 64px;
+    position: relative;
+}
+
+.mv-inner {
+    padding-top: 18px;
+    max-width: calc(335px + 40px);
+
+    @include mq(pc) {
+        padding-top: 35px;
+        max-width: calc(848px + 48px);
+    }
+}
+
+.mv-lead {
+    font-family: $ja2-kiwi;
+    font-size: 14px;
+    line-height: 1.25;
+    text-align: center;
+
+    @include mq(pc) {
+        font-size: clamp(18px, 1.6vw, 24px);
+        font-weight: 500;
+    }
+}
+
+.mv-ttl {
+    // text-align: center;
+
+    img {
+        margin-top: 20px;
+        display: block;
+        width: 100%;
+
+        @include mq(pc) {
+            margin-top: 24px;
+            margin-inline: auto;
+            max-width: 520px;
+        }
+    }
+}
+
+// ====================
+// mv-bg
+// ====================
+.mv-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 554px;
+    background-position: cover;
+    overflow: hidden;
+    z-index: -1;
+
+    @include mq(pc) {
+        height: 740px;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+
+        @include mq(pc) {
+            object-position: center bottom;
+        }
+    }
+}
+
+// ====================
+// mv-deco_wrap
+// ====================
+.mv-deco_wrap {
+    margin-top: 17px;
+    position: relative;
+    height: 514px;
+
+    @include mq(pc) {
+        margin-top: 0;
+        height: 603px;
+    }
+}
+
+// ====================
+// mv-deco_left
+// ====================
+.mv-deco_left {
+    .img1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        @include mq(pc) {
+            top: -1px;
+            left: 37px;
+        }
+
+        img {
+            // width: clamp(130px, 38vw, 142px);
+            width: 142px;
+
+            @include mq(pc) {
+                width: clamp(200px, 16.2vw, 244px);
+                // width: 244px;
+            }
+        }
+    }
+
+    .img2 {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 3;
+
+        @include mq(pc) {
+            left: 7px;
+            bottom: 50px;
+        }
+
+        img {
+            // width: clamp(70px, 23vw, 86px);
+            width: 86px;
+
+            @include mq(pc) {
+                // width: clamp(170px, 13.4vw, 202px);
+                width: 202px;
+            }
+        }
+    }
+}
+
+// ====================
+// mv-deco_right
+// ====================
+.mv-deco_right {
+    .img1 {
+        position: absolute;
+        top: -7px;
+        right: 25px;
+        z-index: 1;
+
+        @include mq(pc) {
+            top: 16px;
+            // right: 127px;
+            right: calc(50% - 297px);
+        }
+
+        img {
+            // width: clamp(90px, 30vw, 110px);
+            width: 110px;
+
+            @include mq(pc) {
+                // width: clamp(160px, 12vw, 180px);
+                width: 180px;
+            }
+        }
+    }
+
+    .img2 {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: 3;
+
+        img {
+            // width: clamp(90px, 29vw, 107px);
+            width: 107px;
+
+            @include mq(pc) {
+                width: clamp(200px, 15.5vw, 233px);
+                // width: 233px;
+            }
+        }
+    }
+}
+
+// ====================
+// mv-deco_phone
+// ====================
+.mv-deco_phone {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10px;
+    width: 100%;
+    max-width: 200px;
+    z-index: 2;
+
+    @include mq(pc) {
+        max-width: 250px;
+        bottom: 62px;
+    }
+}
+
+.mv-phone {
+    position: relative;
+}
+
+.mv-info_wrap {
+    position: absolute;
+    top: calc(50% - 3px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    text-align: center;
+    width: calc(100% - 40px);
+    background-color: #fff;
+    border-radius: 12.8px;
+
+    @include mq(pc) {
+        width: calc(100% - 50px);
+    }
+
+    h2 {
+        padding: 6px 9.6px;
+        font-size: 12.8px;
+        font-weight: 700;
+        color: #fff;
+        background: linear-gradient(265deg, #ac3790 -3.52%, #d65a5c 44.94%, #f4c06d 92.38%);
+
+        @include mq(pc) {
+            padding: 8px 23px;
+            font-size: 16px;
+        }
+    }
+}
+
+.mv-info_body {
+    padding-block: 10.8px 20.2px;
+
+    @include mq(pc) {
+        padding-block: 17px 27px;
+    }
+
+    h3 {
+        span {
+            display: inline-block;
+            padding-bottom: 1px;
+            font-size: 12px;
+            border-bottom: 2.4px solid #ce2073;
+
+            @include mq(pc) {
+                font-size: 14px;
+            }
+        }
+    }
+
+    p {
+        margin-top: 3px;
+        font-size: 12px;
+        font-weight: 700;
+
+        @include mq(pc) {
+            margin-top: 4px;
+            font-size: 16px;
+        }
+    }
+
+    .mv-btn {
+        margin-top: 10px;
+        padding-bottom: 4px;
+        font-size: 14px;
+
+        @include mq(pc) {
+            margin-top: 16px;
+            font-size: 16px;
+        }
+    }
+}
+
+
+// ========================================
+// about
+// ========================================
+.about {
+    margin-top: 32px;
+
+    @include mq(pc) {
+        margin-top: 38px;
+    }
+}
+
+.about_inner {
+    position: relative;
+    max-width: 500px;
+
+    @include mq(pc) {
+        // max-width: calc(848px + 48px);
+        max-width: clamp(508px, 80vw, 896px);
+    }
+}
+
+// ====================
+// about_left
+// ====================
+.about_left {
+    .img1 {
+        position: absolute;
+        top: -21px;
+        // left: -328px;
+        left: clamp(-328px, -21.7vw, -200px);
+        width: 250px;
+        // width: clamp(200px, 21vw, 250px);
+        overflow: hidden;
+    }
+
+    .img2 {
+        position: absolute;
+        top: 395px;
+        right: calc(50% + 125px);
+        width: 200px;
+        overflow: hidden;
+
+        @include mq(pc) {
+            top: 73px;
+            right: auto;
+            left: clamp(-646px, -42.8vw, -350px);
+            width: clamp(350px, 40vw, 480px);
+            // width: 480px;
+        }
+    }
+
+    .img3 {
+        position: absolute;
+        left: 0;
+        bottom: -216px;
+        width: 138px;
+        overflow: hidden;
+        z-index: -1;
+
+        @include mq(pc) {
+            left: clamp(-412px, -27.4vw, -200px);
+            bottom: clamp(-309px, -20.5vw, -200px);
+            width: clamp(350px, 28.4vw, 427px);
+        }
+    }
+}
+
+// ====================
+// about_right
+// ====================
+.about_right {
+    .img1 {
+        position: absolute;
+        top: -10px;
+        // left: calc(50% + 136px);
+        right: 0;
+        width: 54px;
+        overflow: hidden;
+
+        @include mq(pc) {
+            top: clamp(-82px, -5.5vw, -45px);
+            // right: clamp(-646px, -42.8vw, -350px);
+            right: clamp(-143px, -9.5vw, -75px);
+            // left: clamp(-646px, -42.8vw, -350px);
+            // width: clamp(350px, 40vw, 480px);
+            width: clamp(60px, 6.7vw, 100px);
+        }
+    }
+
+    .img2 {
+        position: absolute;
+        top: 273px;
+        left: calc(50% + 130px);
+        width: 200px;
+        overflow: hidden;
+
+        @include mq(pc) {
+            top: 71px;
+            right: clamp(-593px, -39.3vw, -350px);
+            left: auto;
+            width: clamp(350px, 40vw, 480px);
+            // width: 480px;
+        }
+    }
+
+    .img3 {
+        position: absolute;
+        left: calc(50% + 118px);
+        bottom: -60px;
+        width: 48px;
+        overflow: hidden;
+
+        @include mq(pc) {
+            right: clamp(-158px, -10.5vw, -81px);
+            left: auto;
+            bottom: 127px;
+            width: clamp(80px, 6.7vw, 101px);
+            // width: 101px;
+        }
+    }
+
+    .img4 {
+        position: absolute;
+        // left: calc(50% + 448px);
+        right: clamp(-870px, -57.6vw, -800px);
+        bottom: 176px;
+        width: 873px;
+        overflow: hidden;
+        z-index: -1;
+    }
+
+    .img5 {
+        position: absolute;
+        left: calc(50% - 3px);
+        bottom: -119px;
+        width: 133px;
+        overflow: hidden;
+
+        @include mq(pc) {
+            right: clamp(-235px, -15.6vw, -120px);
+            left: auto;
+            bottom: -79px;
+            width: clamp(200px, 20.4vw, 308px);
+        }
+    }
+}
+
+// ====================
+// about-info
+// ====================
+.about-info {
+    padding: 40px 43px;
+    border-radius: 24px;
+    background-color: #fff;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+
+    @include mq(pc) {
+        border-radius: 40px;
+    }
+
+    &::after {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        content: "";
+        background: url(../img/about-arrow.png) no-repeat center center / contain;
+        width: 100px;
+        height: 36px;
+
+        @include mq(pc) {
+            width: 140px;
+            height: 50px;
+        }
+    }
+}
+
+.about-ttl_wrap {
+    position: relative;
+
+    @include mq(pc) {
+        max-width: 667px;
+        margin-inline: auto;
+    }
+
+    .img1 {
+        position: absolute;
+        top: -2px;
+        right: calc(50% + 51px);
+        width: 80px;
+        transform: rotate(-8deg);
+
+        @include mq(pc) {
+            top: 8px;
+            // right: calc(50% + 199px);
+            right: auto;
+            left: 0;
+            // width: 134px;
+            width: clamp(110px, 14.6vw, 134px);
+        }
+    }
+
+    .img2 {
+        position: absolute;
+        top: -4px;
+        left: calc(50% + 63px);
+        width: 80px;
+        transform: rotate(8deg);
+
+        @include mq(pc) {
+            top: 13px;
+            // left: calc(50% + 199px);
+            right: 0;
+            left: auto;
+            // width: 134px;
+            width: clamp(110px, 14.4vw, 134px);
+        }
+    }
+}
+
+.about-ttl {
+    &::before {
+        background-image: url(../img/about-icon.png);
+    }
+}
+
+.about-lead {
+    margin-top: 24px;
+
+    @include mq(pc) {
+        margin-top: 35px;
+    }
+
+    p {
+        font-weight: 700;
+
+        @include mq(pc) {
+            font-size: 16px;
+        }
+    }
+}
+
+.about-txt {
+    margin-top: 24px;
+    font-size: 12px;
+
+    @include mq(pc) {
+        margin-top: 32px;
+        font-size: 16px;
+    }
+
+    span {
+        font-weight: 700;
+    }
+}
+
+.about-txt_bottom {
+    display: inline-block;
+    margin-top: 21px;
+    padding-block: 8px 6px;
+    font-weight: 700;
+    border-bottom: 2px dashed #9ED0E0;
+
+    @include mq(pc) {
+        margin-top: 40px;
+        padding-bottom: 11px;
+        font-size: 20px;
+    }
+}
+
+.about-btn {
+    margin-top: 24px;
+
+    @include mq(pc) {
+        margin-top: 31px;
+    }
+}
+
+// ====================
+// about-bottom
+// ====================
+.about-bottom {
+    margin-top: 138px;
+
+    @include mq(pc) {
+        margin-top: 166px;
+    }
+}
+
+.about-font {
+    display: block;
+    position: relative;
+    width: 354.64px;
+    max-width: 100%;
+    margin-inline: auto;
+    z-index: 2;
+
+    @include mq(pc) {
+        width: 890px;
+    }
+
+    img {
+        width: 100%;
+    }
+}
+
+.about-slider {
+    @include mq(pc) {
+        margin-top: -6px;
+    }
+}
+
+
+// ========================================
+// enter
+// ========================================
+.enter {
+    margin-top: 64px;
+
+    @include mq(pc) {
+        margin-top: 121px;
+    }
+}
+
+.enter_inner {
+    position: relative;
+    max-width: 500px;
+
+    @include mq(pc) {
+        max-width: calc(1512px + 48px);
+    }
+}
+
+.enter-ttl {
+    &::before {
+        background-image: url(../img/enter-icon.png);
+    }
+}
+
+.enter-btn {
+    margin-top: 17px;
+    text-align: center;
+
+    @include mq(pc) {
+        margin-top: 49px;
+    }
+}
+
+
+// ====================
+// enter_left
+// ====================
+.enter_left {
+    .img1 {
+        position: absolute;
+        top: 0;
+        right: calc(50% + 39px);
+        width: 149px;
+        overflow: hidden;
+        z-index: -1;
+
+        @include mq(pc) {
+            top: -57px;
+            right: auto;
+            // left: clamp(-183px, -10vw, -100px);
+            left: 37px;
+            width: clamp(230px, 27.8vw, 420px);
+        }
+    }
+
+    .img2 {
+        position: absolute;
+        top: 549px;
+        left: 20px;
+        width: 55px;
+        overflow: hidden;
+        transform: scale(1, -1);
+
+        @include mq(pc) {
+            top: 650px;
+            left: 35px;
+            width: clamp(55px, 6.7vw, 100px);
+        }
+
+        @include mq(1200) {
+            top: 578px;
+        }
+    }
+}
+
+// ====================
+// enter_right
+// ====================
+.enter_right {
+    .img1 {
+        position: absolute;
+        top: 0;
+        left: calc(50% + 58px);
+
+        @include mq(pc) {
+            top: -28px;
+            left: auto;
+            right: 24px;
+        }
+
+        @include mq(1000) {
+            right: clamp(50px, 7vw, 105px);
+        }
+
+        .img1-wrap {
+            position: relative;
+            width: 160px;
+            height: 85px;
+
+            @include mq(pc) {
+                width: clamp(270px, 24.1vw, 364px);
+                height: clamp(130px, 12.7vw, 191px);
+            }
+
+            .cat1 {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 105px;
+
+                @include mq(pc) {
+                    width: clamp(180px, 15.8vw, 238px);
+                }
+            }
+
+            .cat2 {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 94px;
+
+                @include mq(pc) {
+                    width: clamp(150px, 14.2vw, 214px);
+                }
+            }
+        }
+    }
+
+    .img2 {
+        position: absolute;
+        top: 74px;
+        right: 20px;
+        width: 55px;
+        transform: scaleX(-1);
+        z-index: -1;
+
+        @include mq(pc) {
+            top: clamp(100px, 12.6vw, 146px);
+            right: clamp(30px, 3.5vw, 35px);
+            width: clamp(55px, 6.7vw, 100px);
+        }
+    }
+
+    .img3 {
+        position: absolute;
+        right: 20px;
+        bottom: 360px;
+        width: 55px;
+        transform: scale(-1, -1);
+    }
+}
+
+// ====================
+// enter-step
+// ====================
+.enter-steps {
+    margin-top: 32px;
+
+    @include mq(pc) {
+        margin-top: 42px;
+        display: flex;
+        justify-content: center;
+        // gap: 32px;
+        gap: clamp(20px, 2.5vw, 32px);
+    }
+}
+
+.enter-step {
+    text-align: center;
+
+    @include mq(pc) {
+        width: clamp(230px, 30vw, 320px);
+    }
+
+    &:nth-child(n+2),
+    &:nth-child(n+3) {
+        padding-top: 48px;
+        position: relative;
+
+        &::before {
+            position: absolute;
+            top: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            content: "";
+            background: url(../img/enter-step_sp-line.png) no-repeat center center / contain;
+            width: 7px;
+            height: 34px;
+            z-index: 3;
+
+            @include mq(pc) {
+                background-image: url(../img/enter-step_pc-line.png);
+                width: clamp(80px, 10.3vw, 113px);
+                height: 24px;
+            }
+        }
+    }
+
+    &:nth-child(n+2) {
+        @include mq(pc) {
+            padding-top: 0;
+            margin-top: 68px;
+
+            &::before {
+                top: clamp(100px, 12.6vw, 138px);
+                left: clamp(-41px, -3.8vw, -30px);
+                // top: 138px;
+                // left: -41px;
+            }
+        }
+    }
+
+    &:nth-child(n+3) {
+        @include mq(pc) {
+            padding-top: 0;
+            margin-top: 0;
+
+            &::before {
+                top: clamp(160px, 18.9vw, 207px);
+                left: clamp(-31px, -2.9vw, -20px);
+            }
+        }
+    }
+
+    img {
+        width: 196px;
+
+        @include mq(pc) {
+            width: clamp(230px, 26vw, 280px);
+        }
+    }
+
+    .step-ttl {
+        margin-top: 16px;
+        font-size: 16px;
+        font-weight: 700;
+
+        @include mq(pc) {
+            margin-top: 25px;
+            // font-size: 20px;
+            font-size: clamp(16px, 1.5vw, 20px);
+        }
+    }
+
+    .step-txt {
+        margin-top: 16px;
+        font-size: 12px;
+
+        @include mq(pc) {
+            margin-top: 16px;
+            // font-size: 16px;
+            font-size: clamp(11px, 1.5vw, 16px);
+        }
+
+        a {
+            font-size: 12px;
+            text-decoration: underline;
+
+            @include mq(pc) {
+                // font-size: 16px;
+                font-size: clamp(11px, 1.5vw, 16px);
+            }
+        }
+
+        span {
+            font-weight: 700;
+        }
+    }
+
+    .follow-btn {
+        display: inline-block;
+        position: relative;
+        margin-top: 16px;
+        padding: 8px 12px 8px 40px;
+        background-color: #fff;
+        font-size: 14px;
+        font-weight: 700;
+        transition: all 0.3s;
+
+        @include mq(pc) {
+            margin-top: 18px;
+            padding-left: 44px;
+            font-size: clamp(11px, 1.5vw, 16px);
+        }
+
+        &::before {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 12px;
+            content: "";
+            width: 20px;
+            height: 20px;
+            background: url(../img/instagram-icon.png) no-repeat center center / contain;
+
+            @include mq(pc) {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+}
+
+
+// ========================================
+// prizes
+// ========================================
+.prizes {
+    margin-top: 35px;
+
+    @include mq(pc) {
+        margin-top: 124px;
+    }
+}
+
+.prizes-top {
+    width: 100%;
+    // max-width: 600px;
+    margin-inline: auto;
+}
+
+.prizes-top_inner {
+    position: relative;
+    padding: 20px 20px 34px;
+
+    @include mq(pc) {
+        padding: 30px 56px 52px;
+        max-width: calc(912px + 112px);
+        margin-inline: auto;
+    }
+
+    &::before,
+    &::after {
+        position: absolute;
+        content: "";
+        background-color: #fff;
+        z-index: -1;
+    }
+
+    &::before {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 238px;
+        height: 83px;
+        background: url(../img/sp/prizes-circle.png) no-repeat center center / contain;
+        background-color: transparent;
+
+        @include mq(pc) {
+            background-image: url(../img/pc/prizes-circle.png);
+            width: 366px;
+            height: 149px;
+        }
+    }
+
+    &::after {
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: calc(100% - 83px);
+        border-radius: 24px;
+
+        @include mq(pc) {
+            height: calc(100% - 149px);
+        }
+    }
+}
+
+.prizes-ttl {
+    position: relative;
+    padding-top: 43px;
+    text-align: center;
+
+    @include mq(pc) {
+        padding-top: 52px;
+    }
+
+    &::before {
+        background-image: url(../img/prizes-icon.png);
+    }
+}
+
+.prizes-ttl_left,
+.prizes-ttl_right{
+    position: absolute;
+    top: 0;
+    width: clamp(230px, 28.6vw, 315px);
+}
+
+.prizes-ttl_left{
+    left: -56px;
+}
+
+.prizes-ttl_right{
+    right: -56px;
+}
+
+.prizes-lead {
+    margin-top: 16px;
+    font-size: 12px;
+    text-align: center;
+
+    @include mq(pc) {
+        margin-top: 44px;
+        font-size: 16px;
+    }
+}
+
+.prizes-btn {
+    margin-top: 12px;
+    text-align: center;
+
+    @include mq(pc) {
+        margin-top: 40px;
+    }
+}
+
+// ====================
+// prizes-card
+// ====================
+.prizes-cards {
+    margin-top: 48px;
+    display: flex;
+    gap: 39px 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @include mq(pc) {
+        margin-top: 81px;
+        gap: 0;
+    }
+}
+
+.prizes-card {
+    position: relative;
+    width: calc(50% - 7.5px);
+    border-radius: 8px;
+
+    @include mq(pc) {
+        width: clamp(200px, 23.4vw, 280px);
+        border-radius: 16px;
+
+        &:nth-child(n+3) {
+            margin-top: 80px;
+        }
+
+        &:nth-child(n+4) {
+            margin-left: clamp(25px, 3vw, 36px);
+        }
+    }
+
+    &:hover {
+        .prizes-card_img {
+            img {
+                transform: scale(1.2);
+            }
+        }
+    }
+
+    &:hover {
+        .prizes-card_icon {
+            svg {
+                .background {
+                    fill: #9ed0e0;
+                }
+            }
+        }
+    }
+}
+
+.large-card {
+    @include mq(pc) {
+        width: clamp(310px, 40.1vw, 440px);
+        border-radius: 24px;
+
+        &:nth-child(n+2) {
+            margin-left: 32px;
+        }
+
+        .prizes_bonus-num {
+            top: -49px;
+            width: clamp(70px, 9.1vw, 100px);
+        }
+
+        .prizes-card_inner {
+            border-radius: 24px;
+        }
+
+        .prizes-card_img {
+            border-top-left-radius: 24px;
+            border-top-right-radius: 24px;
+        }
+
+        .prizes-card_txt {
+            padding: 28px;
+            font-size: 20px;
+            min-height: 120px;
+        }
+
+        .prizes-card_btn {
+            border-radius: 24px;
+        }
+
+        .prizes-card_icon {
+            svg {
+                width: clamp(70px, 9.1vw, 100px);
+                height: clamp(70px, 9.1vw, 100px);
+                border-bottom-right-radius: 24px;
+            }
+        }
+    }
+}
+
+.prizes_bonus-num {
+    position: absolute;
+    top: -24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 48px;
+    z-index: 2;
+
+    @include mq(pc) {
+        top: -40px;
+        width: clamp(48px, 6.7vw, 80px);
+    }
+}
+
+.prizes-card_inner {
+    position: relative;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+
+    @include mq(pc) {
+        border-radius: 16px;
+    }
+}
+
+.prizes-card_img {
+    display: block;
+    overflow: hidden;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+
+    @include mq(pc) {
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+    }
+
+    &>img {
+        width: 100%;
+        object-fit: cover;
+        transition: all 0.3s;
+    }
+}
+
+.prizes-card_txt {
+    padding: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    min-height: 56px;
+
+    @include mq(pc) {
+        padding: 14px;
+        font-size: 16px;
+        min-height: 80px;
+    }
+}
+
+.prizes-card_btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    outline: none;
+
+    @include mq(pc) {
+        border-radius: 16px;
+    }
+
+    &:hover,
+    &:focus {
+        border-color: #9ed0e0;
+    }
+}
+
+.prizes-card_icon {
+    svg {
+        display: block;
+        position: absolute;
+        right: -2px;
+        bottom: 0;
+        width: calc(32.25px + 1vw);
+        height: calc(32.25px + 1vw);
+        border-bottom-right-radius: 8px;
+
+        @include mq(pc) {
+            width: clamp(48px, 5.4vw, 64px);
+            height: clamp(48px, 5.4vw, 64px);
+            border-bottom-right-radius: 16px;
+        }
+    }
+}
+
+
+// ====================
+// prizes-modal
+// ====================
+.prizes-modal {
+    padding: 0;
+    width: 336px;
+    max-width: calc(100% - 20px);
+    height: 480px;
+    max-height: calc(100% - 20px);
+    text-align: center;
+    border: none;
+    border-radius: 24px;
+
+    @include mq(pc) {
+        width: 480px;
+        height: 650px;
+    }
+
+    &::backdrop {
+        background-color: #000;
+        opacity: 0.7;
+    }
+}
+
+// .prizes-modal_img{
+//     width: calc(100% + 40px);
+// }
+
+.prizes-modal_info {
+    padding: 39px 20px 19px 20px;
+    background-color: #fff;
+
+    @include mq(pc) {
+        padding: 32px 40px 19px;
+    }
+}
+
+.prizes-modal_ttl {
+    font-size: 16px;
+    font-weight: 700;
+
+    @include mq(pc) {
+        font-size: 20px;
+    }
+}
+
+.prizes-modal_txt {
+    margin-top: 12px;
+    font-size: 12px;
+
+    @include mq(pc) {
+        font-size: 16px;
+    }
+}
+
+.prizes-modal_btn {
+    margin-top: 16px;
+    padding-bottom: 4px;
+
+    @include mq(pc) {
+        margin-top: 24px;
+    }
+}
+
+
+// ====================
+// prizes-bottom
+// ====================
+.prizes-bottom {
+    margin-top: -43px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: -2;
+
+    @include mq(pc) {
+        margin-top: 0;
+    }
+
+    img {
+        display: block;
+        width: 100%;
+        min-width: 580px;
+
+        @include mq(pc) {
+            min-height: 600px;
+            object-fit: cover;
+            object-position: center bottom;
+        }
+    }
+}
+
+
+
+// ========================================
+// spots
+// ========================================
+.spots {
+    margin-top: -46px;
+    padding-block: 46px;
+    position: relative;
+
+    @include mq(pc) {
+        margin-top: -120px;
+        padding-block: 120px;
+    }
+
+    &::before,
+    &::after {
+        position: absolute;
+        left: 0;
+        content: "";
+        width: 100%;
+        height: 46px;
+        background-color: transparent;
+        background-repeat: repeat-x;
+        background-position: left -3px center;
+        background-size: contain;
+        z-index: -1;
+
+        @include mq(pc) {
+            // width: 252px;
+            height: 120px;
+            background-position: left center;
+        }
+    }
+
+    &::before {
+        top: 1px;
+        background-image: url(../img/sp/spots-top_sp-wave.png);
+
+        @include mq(pc) {
+            background-image: url(../img/pc/spots-top_pc-wave.png);
+        }
+    }
+
+    &::after {
+        bottom: 1px;
+        background-image: url(../img/sp/spots-bottom_sp-wave.png);
+
+        @include mq(pc) {
+            background-image: url(../img/pc/spots-bottom_pc-wave.png);
+        }
+    }
+}
+
+.spots-wrap {
+    padding-bottom: 21px;
+    background-color: #67b0c7;
+
+    @include mq(pc) {
+        padding-bottom: 0;
+    }
+}
+
+
+// ====================
+// spots-top
+// ====================
+.spots-top {
+    text-align: center;
+
+    @include mq(1200) {
+        display: flex;
+        column-gap: 32px;
+        padding-left: max(30px, calc(50% - 512px));
+    }
+}
+
+.spots-ttl {
+    display: inline-block;
+    padding-left: 36px;
+    font-family: $ja2-kiwi;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.25;
+    color: #fff;
+    position: relative;
+
+    @include mq(pc) {
+        // padding-top: 72px;
+        // padding-block: 3px;
+        padding-left: 72px;
+        font-size: 40px;
+        letter-spacing: 10px;
+    }
+
+    @include mq(1200) {
+        padding-top: 72px;
+        padding-block: 3px;
+        width: 56px;
+        writing-mode: vertical-lr;
+        text-align: left;
+    }
+
+    &::before {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        content: "";
+        width: 28px;
+        height: 28px;
+        background: url(../img/star-icon.png) no-repeat center center / contain;
+
+        @include mq(pc) {
+            width: 56px;
+            height: 56px;
+        }
+
+        @include mq(1200) {
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}
+
+
+// ====================
+// spots-card
+// ====================
+.spots-slider {
+    margin-top: 22px;
+
+    @include mq(pc) {
+        margin-top: 0;
+        width: 100%;
+    }
+
+    @include mq(1200) {
+        width: calc(100% - 56px - 32px);
+    }
+}
+
+.spots-card_wrap {
+    height: auto;
+}
+
+.spots-card {
+    height: 100%;
+    padding-inline: 24px;
+    padding-bottom: 30px;
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 12px;
+
+    @include mq(pc) {
+        padding-inline: 32px;
+        padding-bottom: 40px;
+        border-radius: 24px;
+    }
+}
+
+.spots-card_img {
+    display: block;
+    width: calc(100% + 48px);
+    margin-left: -24px;
+
+    @include mq(pc) {
+        width: calc(100% + 64px);
+        margin-left: -32px;
+    }
+}
+
+// .spots-card_info {
+//     // min-height: 222px;
+//     padding: 18px 24px 28px 24px;
+//     background-color: #fff;
+
+//     @include mq(pc) {
+//         height: fit-content;
+//         // min-height: 302px;
+//         padding: 26px 32px 28px 32px;
+//     }
+// }
+
+.spots-card_ttl {
+    margin-top: 18px;
+    font-size: 16px;
+    font-weight: 700;
+
+    @include mq(pc) {
+        margin-top: 26px;
+        font-size: 20px;
+    }
+}
+
+.spots-card_txt {
+    margin-top: 16px;
+    font-size: 12px;
+    text-align: left;
+
+    @include mq(pc) {
+        margin-top: 24px;
+        font-size: 16px;
+    }
+}
+
+
+// ====================
+// spots-arrow
+// ====================
+.spots-arrow {
+    margin-top: -10px;
+    position: relative;
+    max-width: 700px;
+    margin-inline: auto;
+
+    @include mq(pc) {
+        margin-top: -33px;
+        padding-inline: 48px;
+        max-width: calc(946px + 96px);
+    }
+
+    // @include mq(1200) {
+    //     display: block !important;
+    // }
+}
+
+.spots-arrow_wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+.spots-arrow_prev,
+.spots-arrow_next {
+    position: static;
+    content: "";
+    width: 80px;
+    height: 80px;
+    background: url(../img/spots-arrow.svg) no-repeat center center / contain;
+    border-radius: 50%;
+    background-color: #ffee56;
+    background-size: 16px 27px;
+    transition: all 0.3s;
+
+    svg {
+        display: none;
+    }
+}
+
+.spots-arrow_next {
+    transform: scaleX(-1);
+}
+
+
+// ====================
+// spots-bottom
+// ====================
+.spots-bottom {
+    @include mq(pc) {
+        position: relative;
+    }
+}
+
+.spots-pawpads {
+    position: absolute;
+    right: calc(50% + 620px);
+    bottom: 0;
+    width: clamp(55px, 6.7vw, 100px);
+}
+
+.spots-bottom_wrap {
+    margin-inline: auto;
+
+    @include mq(1200) {
+        margin-top: 40px;
+        padding-bottom: 4px;
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.spots-bottom_font {
+    display: block;
+    width: 254px;
+    line-height: 1;
+    margin-inline: auto;
+
+    @include mq(pc) {
+        width: 494px;
+    }
+
+    @include mq(1200) {
+        margin: 0;
+    }
+}
+
+.spots-bottom_info {
+    margin-top: 17px;
+    text-align: center;
+
+    @include mq(pc) {
+        margin-top: 3px;
+    }
+}
+
+.spots-bottom_info-txt {
+    font-size: 11.44px;
+    color: #fff;
+
+    @include mq(pc) {
+        font-size: 16px;
+    }
+}
+
+.spots-btn {
+    margin-top: 23px;
+
+    @include mq(1200) {
+        margin-right: -11px;
+    }
+}
+
+
+
+// ========================================
+// faq
+// ========================================
+.faq {
+    margin-top: 37px;
+
+    @include mq(pc) {
+        margin-top: 120px;
+    }
+}
+
+.faq-ttl {
+    &::before {
+        background-image: url(../img/faq-icon.png);
+    }
+}
+
+
+// ====================
+// qa-box
+// ====================
+.qa-boxes {
+    margin-top: 25px;
+
+    @include mq(pc) {
+        margin-top: 43px;
+    }
+}
+
+.qa-box {
+    border: solid 2px #4A3636;
+    border-radius: 12px;
+    background-color: #fff;
+
+    @include mq(pc) {
+        border-radius: 16px;
+    }
+
+    &:nth-child(n+2) {
+        margin-top: 12px;
+
+        @include mq(pc) {
+            margin-top: 24px;
+        }
+    }
+
+    &.is-open {
+        .qa-box_head-tgl {
+            &::before {
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+}
+
+.qa-box_head {
+    padding: 10px 14px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    width: 100%;
+    // max-width: 600px;
+
+    @include mq(pc) {
+        padding: 23px 22px 21px;
+        gap: 16px;
+    }
+}
+
+.qa-box_head-icon,
+.qa-box_body-icon {
+    font-family: $en2-josefin;
+    font-size: 24px;
+    line-height: 1.25;
+    color: #9ED0E0;
+
+    @include mq(pc) {
+        font-size: 32px;
+    }
+}
+
+.qa-box_head-txt {
+    font-weight: 700;
+    text-align: left;
+    flex-grow: 1;
+
+    @include mq(pc) {
+        font-size: 20px;
+    }
+}
+
+.qa-box_head-tgl {
+    position: relative;
+    width: 26px;
+    height: 26px;
+    background-color: #9ED0E0;
+    border-radius: 50%;
+
+    @include mq(pc) {
+        width: 44px;
+        height: 44px;
+    }
+
+    &::before,
+    &::after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        content: "";
+        width: 10px;
+        height: 2px;
+        border-radius: 50%;
+        background-color: #fff;
+        transition: all 0.3s;
+
+        @include mq(pc) {
+            width: 19px;
+            height: 3px;
+        }
+    }
+
+    &::before {
+        transform: translate(-50%, -50%) rotate(90deg);
+    }
+}
+
+.qa-box_body {
+    display: none;
+    padding: 17px 14px 13px;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    background-color: #F5F5F5;
+
+    @include mq(pc) {
+        padding: 27px 14px 21px 22px;
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+    }
+}
+
+.qa-box_body-wrap {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    width: 100%;
+    // max-width: 600px;
+}
+
+.qa-box_body-icon {
+    font-family: $en2-josefin;
+    font-size: 24px;
+    line-height: 1.25;
+    color: #9ED0E0;
+
+    @include mq(pc) {
+        font-size: 32px;
+    }
+}
+
+.qa-box_body-txt {
+    text-align: left;
+
+    @include mq(pc) {
+        font-size: 16px;
+    }
+}
+
+
+// ========================================
+// entry
+// ========================================
+.entry {
+    margin-top: 28px;
+
+    @include mq(pc) {
+        margin-top: 120px;
+    }
+}
+
+.entry-inner {
+    padding: 16px 15.5px 22px 16px;
+    border: 8px solid #fff;
+
+    @include mq(pc) {
+        padding: 33px 48px 45px 48px;
+    }
+}
+
+.entry-ttl {
+    &::before {
+        background-image: url(../img/entry-icon.png);
+    }
+}
+
+.entry-bg {
+    display: block;
+    margin-top: 32px;
+
+    @include mq(pc) {
+        margin-top: 121px;
+    }
+}
+
+
+// ====================
+// entry-table
+// ====================
+.entry-tbl {
+    margin-top: 24px;
+
+    @include mq(pc) {
+        margin-top: 43px;
+    }
+
+    table {
+        width: 100%;
+        table-layout: fixed;
+        border-collapse: collapse;
+        text-align: left;
+
+        tr {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid #ccc;
+
+            @include mq(pc) {
+                flex-direction: row;
+                padding-inline: 16px 5px;
+                padding-bottom: 12px;
+            }
+
+            &:nth-child(n+2) {
+                padding-top: 13px;
+            }
+
+            &:last-child {
+                padding-bottom: 0;
+                border-bottom: none;
+            }
+
+            th {
+                padding-left: 16px;
+                font-weight: 700;
+                // text-align: left;
+                position: relative;
+                height: 100%;
+
+                @include mq(pc) {
+                    font-size: 16px;
+                    width: 216px;
+                    flex-grow: 1;
+                }
+
+                &::before {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: 0;
+                    content: "";
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    background-color: #9ED0E0;
+                }
+            }
+
+            td {
+                font-size: 12px;
+
+                @include mq(pc) {
+                    font-size: 16px;
+                    width: calc(100% - 224px);
+                }
+
+                a {
+                    text-decoration: underline;
+                }
+
+                ul {
+                    li {
+                        padding-left: 18px;
+                        position: relative;
+
+                        @include mq(pc) {
+                            padding-left: 24px;
+                        }
+
+                        &::before {
+                            position: absolute;
+                            top: 0;
+                            left: 3px;
+                            content: "・";
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+// ========================================
+// contact
+// ========================================
+.contact {
+    padding-block: 39px 40px;
+    background-color: #fff;
+
+    @include mq(pc) {
+        padding-block: 122px 120px;
+    }
+}
+
+.contact-inner {
+    @include mq(pc) {
+        margin-inline: auto;
+        padding-inline: 24px;
+        max-width: calc(848px + 48px);
+    }
+}
+
+.contact-ttl {
+    &::before {
+        background-image: url(../img/contact-icon.png);
+    }
+}
+
+.contact-lead {
+    margin-top: 24px;
+    font-size: 12px;
+    text-align: center;
+
+    @include mq(pc) {
+        margin-top: 36px;
+        font-size: 16px;
+    }
+}
+
+
+// ====================
+// contact-form
+// ====================
+.contact-form {
+    margin-top: 24px;
+
+    @include mq(pc) {
+        margin-top: 41px;
+    }
+}
+
+.contact-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+// フォームヘッダー
+.form-field {
+    @include mq(pc) {
+        display: flex;
+    }
+}
+
+.form-field_head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    @include mq(pc) {
+        width: 220px;
+    }
+}
+
+.form-field_head-msg {
+    @include mq(pc) {
+        height: 100%;
+    }
+}
+
+.form-field_label {
+    font-weight: 700;
+
+    @include mq(pc) {
+        font-size: 16px;
+    }
+}
+
+.form-field_tag {
+    padding: 4px 8px;
+    border-radius: 4px;
+    background-color: #CE2073;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+}
+
+// フォームボディー
+.form-field_item {
+    margin-top: 8px;
+
+    @include mq(pc) {
+        margin-top: 0;
+        width: calc(100% - 220px);
+    }
+}
+
+// お名前、メールアドレス、メッセージ
+.form-txt,
+.form-textarea {
+    width: 100%;
+    height: 56px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    background-color: #F5F5F5;
+    padding: 16px 16px 18px;
+
+    @include mq(pc) {
+        padding: 16px 16px 14px;
+    }
+
+    &::placeholder {
+        color: #ccc;
+
+        @include mq(pc) {
+            font-size: 16px;
+        }
+    }
+
+    &:focus,
+    &:hover {
+        outline: none;
+    }
+
+    &:focus {
+        background-color: #E9F6F8;
+        border-color: #9ed0e0;
+    }
+
+    &.is-error {
+        background-color: #fff0f7;
+        border-color: #ce2073;
+    }
+}
+
+.form-textarea {
+    height: 160px;
+}
+
+// お問い合わせ内容
+.form-select {
+    position: relative;
+    width: 100%;
+    height: 56px;
+    padding: 14.5px 15px;
+    font-size: 14px;
+    appearance: none;
+    cursor: pointer;
+    background-image: url(../img/form-select_arrow.svg), linear-gradient(to left, #9ed0e0 52px, #f5f5f5 52px);
+    background-repeat: no-repeat, no-repeat;
+    background-position: center right 18.65px, center center;
+    background-size: 14.9px 8.78px, cover;
+    border: 1px solid transparent;
+    border-radius: 8px;
+
+    &:focus,
+    &:hover {
+        outline: none;
+    }
+
+    &:focus {
+        border-color: #9ed0e0;
+    }
+
+    &.is-error {
+        background-image: url(../img/form-select_arrow.svg), linear-gradient(to left, #ce2073 52px, #fff0f7 52px);
+        border-color: #ce2073;
+    }
+
+    @include mq(pc) {
+        font-size: 16px;
+    }
+}
+
+// メールマガジン
+.form-field_radios {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0;
+    height: 24px;
+
+    @include mq(pc) {
+        height: 56px;
+    }
+}
+
+.from-radio_input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+
+    &:focus {
+        border-color: #9ed0e0;
+    }
+
+    &:checked {
+        &+.from-radio_text {
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.from-radio_text {
+    position: relative;
+    padding-left: 32px;
+
+    @include mq(pc) {
+        padding-left: 33px;
+        font-size: 16px;
+    }
+
+    &::before,
+    &::after {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        content: "";
+        border-radius: 50%;
+
+        &.is-error {
+            background-color: #fff0f7;
+            border-color: #ce2073;
+        }
+    }
+
+    &::before {
+        left: 0;
+        width: 24px;
+        height: 24px;
+        background-color: #f5f5f5;
+        border: 1px solid transparent;
+    }
+
+    &::after {
+        left: 6px;
+        width: 12px;
+        height: 12px;
+        background-color: #9ed0e0;
+        opacity: 0;
+    }
+}
+
+// 同意チェック
+.contact_privacy {
+    margin-top: 24px;
+    text-align: center;
+
+    @include mq(pc) {
+        margin-top: 40px;
+    }
+}
+
+.form-checkbox {
+    cursor: pointer;
+}
+
+.form-checkbox_input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+
+    &:checked {
+        &+.form-checkbox_txt {
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.form-checkbox_txt {
+    position: relative;
+    padding-left: 36px;
+
+    @include mq(pc) {
+        font-size: 16px;
+    }
+
+    &::before,
+    &::after {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        content: "";
+    }
+
+    &::before {
+        width: 24px;
+        height: 24px;
+        border-radius: 4px;
+        background-color: #F5F5F5;
+        border: 1px solid transparent;
+        transition: all 0.3;
+    }
+
+    &::after {
+        left: 5px;
+        width: 14px;
+        height: 9px;
+        background: url(../img/check.png) no-repeat center center / contain;
+        opacity: 0;
+    }
+
+    a {
+        text-decoration: underline;
+        text-underline-offset: 2px;
+        text-decoration-skip-ink: none;
+    }
+}
+
+// 送信ボタン
+.contact__button {
+    margin-top: 25px;
+    text-align: center;
+
+    @include mq(pc) {
+        margin-top: 40px;
+
+        & .btn-1 {
+            padding-inline: 38px;
+        }
+    }
+}
+
+
+// ========================================
+// footer
+// ========================================
+.footer {
+    margin-top: 44px;
+
+    @include mq(pc) {
+        margin-top: 120px;
+    }
+}
+
+.footer-inner {
+    width: 100%;
+    max-width: 500px;
+
+    @include mq(pc) {
+        max-width: calc(1024px + 48px);
+    }
+}
+
+.footer-sns_ttl {
+    font-family: $en2-josefin;
+    font-size: 20px;
+    line-height: 1.25;
+    text-align: center;
+
+    @include mq(pc) {
+        font-size: 24px;
+    }
+}
+
+.footer-sns_links {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.footer-sns_link {
+    width: 32px;
+    height: 32px;
+
+    @include mq(pc) {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.footer-ttl {
+    margin-top: 13px;
+    display: block;
+    width: 100%;
+
+    @include mq(pc) {
+        margin-top: 41px;
+        margin-inline: auto;
+        max-width: 755px;
+    }
+}
+
+.footer-access {
+    margin-top: -3px;
+    overflow: hidden;
+    border-radius: 16px;
+    background-color: #fff;
+
+    @include mq(pc) {
+        margin-top: -3px;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+}
+
+.footer-access_maq {
+    @include mq(pc) {
+        width: 50%;
+    }
+
+    iframe {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 335 / 271;
+        vertical-align: top;
+
+        @include mq(pc) {
+            aspect-ratio: 512 / 400;
+        }
+    }
+}
+
+.footer-access_info {
+    margin-inline: auto;
+    padding: 22px 27.5px 29px 27px;
+    width: fit-content;
+
+    @include mq(pc) {
+        padding: 10px;
+    }
+}
+
+.footer-logo {
+    text-align: center;
+
+    @include mq(pc) {
+        text-align: left;
+    }
+
+    a {
+        img {
+            display: inline-block;
+            width: 153px;
+
+            @include mq(pc) {
+                width: 183px;
+            }
+        }
+    }
+}
+
+.footer-access_info-txt {
+    margin-top: 29px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: fit-content;
+
+    @include mq(pc) {
+        margin-top: 24px;
+        gap: 12px;
+    }
+}
+
+.footer-access_info-row {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+
+    dt {
+        padding-left: 16px;
+        position: relative;
+        min-width: 64px;
+        font-size: 12px;
+        font-weight: 700;
+
+        @include mq(pc) {
+            padding-left: 16px;
+            min-width: clamp(80px, 10vw, 104px);
+            font-size: clamp(14px, 1.5vw, 16px);
+        }
+
+        &::before {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            content: "";
+            width: 8px;
+            height: 8px;
+            background-color: #9ED0E0;
+            border-radius: 50%;
+        }
+    }
+
+    dd {
+        font-size: 12px;
+
+        @include mq(pc) {
+            font-size: clamp(14px, 1.5vw, 16px);
+        }
+    }
+}
+
+// pagetop
+.pagetop {
+    display: block;
+    margin-top: 2px;
+    text-align: center;
+
+    @include mq(pc) {
+        margin-top: 0;
+        position: fixed;
+        right: 40px;
+        bottom: clamp(30px, 10vw, 135px);
+        z-index: 10;
+    }
+
+    img {
+        width: 75px;
+
+        @include mq(pc) {
+            width: clamp(80px, 20vw, 100px);
+        }
+    }
+}
+
+.footer-copyright {
+    position: relative;
+    margin-top: 3px;
+    padding-top: 45.7px;
+
+    @include mq(pc) {
+        margin-top: 120px;
+        padding-top: 120px;
+    }
+
+    &::before {
+        position: absolute;
+        top: 1px;
+        left: 0;
+        content: "";
+        width: 100%;
+        height: 45.7px;
+        background-image: url(../img/sp/spots-top_sp-wave.png);
+        background-color: transparent;
+        background-repeat: repeat-x;
+        background-position: left -6px center;
+        background-size: contain;
+
+        @include mq(pc) {
+            // width: 252px;
+            height: 120px;
+            background-image: url(../img/pc/spots-top_pc-wave.png);
+        }
+    }
+}
+
+.copyright {
+    padding-bottom: 25px;
+    font-size: 10px;
+    color: #fff;
+    text-align: center;
+    background-color: #67b0c7;
+
+    @include mq(pc) {
+        padding-bottom: 32px;
+        font-size: 14px;
+    }
+}
