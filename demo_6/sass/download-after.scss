@@ -1,0 +1,138 @@
+@use "sass:map";
+
+// ================================================================================
+// responsive
+// ================================================================================
+$breakpoints: (
+    1280: "screen and (min-width: 1280px)",
+    980: "screen and (min-width: 980px)",
+    pc: "screen and (min-width: 768px)",
+    sp: "screen and (max-width: 767px)",
+);
+
+@mixin mq($breakpoint: pc) {
+    @media #{map.get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+
+// ================================================================================
+// download-after
+// ================================================================================
+.download-page {
+    margin-top: 69px;
+    margin-bottom: 100px;
+
+    @include mq(pc) {
+        margin-top: 79px;
+        margin-bottom: 158px;
+    }
+}
+
+.download-page_inner {
+    padding-inline: 20px;
+    margin-inline: auto;
+
+    @include mq(pc) {
+        // padding-inline: 7%;
+        padding-inline: 40px;
+        max-width: calc(1100px + 80px);
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.download-left {
+    width: 100%;
+    max-width: 500px;
+    margin-inline: auto;
+
+    @include mq(pc) {
+        width: 47%;
+        max-width: 510px;
+        margin-inline: 0;
+    }
+}
+
+.download-left_info {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.4;
+
+    @include mq(pc) {
+        font-size: 28px;
+    }
+}
+
+.download-left_img {
+    margin-top: 30px;
+    // text-align: center;
+    // padding-inline: 5vw;
+    margin-inline: auto;
+    width: 100%;
+    max-width: 300px;
+
+    // @include mq(pc) {
+    //     padding-inline: 8.2vw;
+    // }
+}
+
+.download-left_txt {
+    margin-top: 28px;
+
+    @include mq(pc) {
+        margin-top: 25px;
+    }
+}
+
+.download-right {
+    margin-top: 60px;
+    width: 100%;
+    max-width: 500px;
+    margin-inline: auto;
+    border-radius: 12px;
+    background-color: #EDF3F8;
+    padding: 38px 20px 41px;
+
+    @include mq(pc) {
+        width: 50%;
+        max-width: 550px;
+        margin-top: -2px;
+        margin-inline: 0;
+        padding: 39px 40px 41px;
+    }
+}
+
+.download-right_ttl {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.7;
+
+    @include mq(pc) {
+        font-size: 32px;
+        line-height: 1.55;
+    }
+}
+
+.download-right_txt {
+    margin-top: 34px;
+    line-height: 1.6;
+
+    @include mq(pc) {
+        margin-top: 35px;
+        line-height: 1.5;
+    }
+
+    a {
+        display: block;
+        line-height: 1;
+        color: #023E78;
+        text-decoration: underline;
+        transition: all 0.5s;
+
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+}

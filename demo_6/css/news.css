@@ -1,0 +1,137 @@
+.news-content {
+  margin-top: 67px;
+  margin-bottom: 103px;
+}
+@media screen and (min-width: 768px) {
+  .news-content {
+    margin-top: 86px;
+    margin-bottom: 160px;
+  }
+}
+
+.news-content > .news-inner {
+  margin-inline: auto;
+  padding-inline: 5.4%;
+}
+@media screen and (min-width: 768px) {
+  .news-content > .news-inner {
+    padding-inline: 40px;
+    max-width: 1180px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+.archive-title {
+  font-size: 20px;
+  font-weight: 700;
+}
+@media screen and (min-width: 768px) {
+  .archive-title {
+    font-size: 32px;
+  }
+}
+
+.entries.m_horizontal {
+  margin-top: 25px;
+}
+@media screen and (min-width: 768px) {
+  .entries.m_horizontal {
+    margin-top: 28px;
+  }
+}
+
+.entries {
+  display: block;
+}
+
+.entry-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+.entry-item:nth-of-type(n+2) {
+  margin-top: 20px;
+}
+@media screen and (min-width: 768px) {
+  .entry-item:nth-of-type(n+2) {
+    margin-top: 40px;
+  }
+}
+
+.entry-item-img {
+  width: 36%;
+}
+@media screen and (min-width: 768px) {
+  .entry-item-img {
+    width: 33%;
+    max-width: 250px;
+  }
+}
+.entry-item-img img {
+  height: 24vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (min-width: 768px) {
+  .entry-item-img img {
+    height: 12.2vw;
+    max-height: 156px;
+  }
+}
+
+.entry-item-body {
+  width: 60.7%;
+  padding-top: 1px;
+}
+@media screen and (min-width: 768px) {
+  .entry-item-body {
+    width: 64.4%;
+    padding-top: 3px;
+  }
+}
+
+.entry-item-meta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.entry-item-tag span {
+  font-size: 12px;
+  color: #E61264;
+  border: 1px solid #E61264;
+  padding: 3px 9px 2px;
+}
+@media screen and (min-width: 768px) {
+  .entry-item-tag span {
+    font-size: 14px;
+  }
+}
+
+.entry-item-title {
+  margin-top: 5px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+@media screen and (min-width: 768px) {
+  .entry-item-title {
+    margin-top: 15px;
+    font-size: 16px;
+    line-height: 1.2;
+  }
+}

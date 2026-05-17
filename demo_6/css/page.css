@@ -1,0 +1,235 @@
+.page-content {
+  margin-top: 74px;
+  margin-bottom: 100px;
+}
+@media screen and (min-width: 768px) {
+  .page-content {
+    margin-top: 84px;
+    margin-bottom: 160px;
+  }
+}
+
+.page-inner {
+  margin-inline: auto;
+  padding-inline: 5.4%;
+}
+@media screen and (min-width: 768px) {
+  .page-inner {
+    padding-inline: 40px;
+    max-width: 1180px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+.page-item-meta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.page-item-tag span {
+  font-size: 14px;
+  color: #E61264;
+  border: 1px solid #E61264;
+  padding: 7px 23px;
+}
+
+.page-ttl {
+  margin-top: 28px;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.32;
+  color: #1a1a1a;
+}
+@media screen and (min-width: 768px) {
+  .page-ttl {
+    font-size: 24px;
+  }
+}
+
+.page-item_img {
+  margin-top: 24px;
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .page-item_img {
+    width: 100%;
+  }
+}
+.page-item_img img {
+  height: 47vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (min-width: 768px) {
+  .page-item_img img {
+    height: 31.2vw;
+    max-height: 400px;
+  }
+}
+
+.entry-body {
+  margin-top: 20px;
+}
+@media screen and (min-width: 768px) {
+  .entry-body {
+    margin-top: 39px;
+  }
+}
+
+.entry-body h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #023E78;
+  padding: 11px 20px 9px 19px;
+  border-left: 6px solid #023E78;
+  margin-bottom: 16px;
+}
+@media screen and (min-width: 768px) {
+  .entry-body h2 {
+    padding: 10px 20px 10px 20px;
+  }
+}
+
+.entry-body h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #023E78;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #023E78;
+  margin-top: 30px;
+  margin-bottom: 16px;
+}
+@media screen and (min-width: 768px) {
+  .entry-body h3 {
+    margin-top: 28px;
+  }
+}
+
+.entry-body h4 {
+  margin-top: 30px;
+  margin-bottom: 13px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #023E78;
+}
+@media screen and (min-width: 768px) {
+  .entry-body h4 {
+    margin-bottom: 14px;
+  }
+}
+
+.entry-body ol {
+  margin-top: 15px;
+  margin-left: 6.4%;
+  list-style: decimal;
+}
+@media screen and (min-width: 768px) {
+  .entry-body ol {
+    margin-top: 13px;
+    margin-left: 2.7%;
+  }
+}
+
+.entry-body ul {
+  margin-top: 16px;
+  margin-bottom: 14px;
+  margin-left: 6.4%;
+  list-style: disc;
+}
+@media screen and (min-width: 768px) {
+  .entry-body ul {
+    margin-left: 2.7%;
+    margin-bottom: 16px;
+  }
+}
+
+.entry-body a {
+  text-decoration: underline;
+  color: #023E78;
+}
+
+.entry-body blockquote {
+  margin-top: 14px;
+  position: relative;
+  width: 100%;
+  background-color: #F8F8F8;
+  padding: 29px 35px 8px 31px;
+  border-left: 4px solid #023E78;
+}
+@media screen and (min-width: 768px) {
+  .entry-body blockquote {
+    margin-top: 12px;
+    padding-top: 32px;
+    padding-bottom: 31px;
+    width: 100%;
+    max-width: 646px;
+  }
+}
+.entry-body blockquote::before {
+  position: absolute;
+  top: 15px;
+  left: 17px;
+  content: "";
+  background: url(../img/news/quote.svg) no-repeat center center/contain;
+  width: 55.076171875px;
+  height: 47.435546875px;
+}
+.entry-body blockquote > p {
+  margin-top: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.page-pagination {
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.prev-btn,
+.next-btn {
+  border: 1px solid #023E78;
+  border-radius: 4px;
+  padding: 6px 10px;
+  text-align: center;
+  width: 100%;
+  max-width: 114px;
+}
+@media screen and (min-width: 768px) {
+  .prev-btn,
+  .next-btn {
+    padding-block: 5px;
+  }
+}
+.prev-btn a,
+.next-btn a {
+  font-size: 14px;
+  color: #023E78;
+}
+
+.prev-btn {
+  margin-right: auto;
+}
+
+.next-btn {
+  margin-left: auto;
+}

@@ -1,0 +1,120 @@
+.download-page {
+  margin-top: 69px;
+  margin-bottom: 100px;
+}
+@media screen and (min-width: 768px) {
+  .download-page {
+    margin-top: 79px;
+    margin-bottom: 158px;
+  }
+}
+
+.download-page_inner {
+  padding-inline: 20px;
+  margin-inline: auto;
+}
+@media screen and (min-width: 768px) {
+  .download-page_inner {
+    padding-inline: 40px;
+    max-width: 1180px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+.download-left {
+  width: 100%;
+  max-width: 500px;
+  margin-inline: auto;
+}
+@media screen and (min-width: 768px) {
+  .download-left {
+    width: 47%;
+    max-width: 510px;
+    margin-inline: 0;
+  }
+}
+
+.download-left_info {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+@media screen and (min-width: 768px) {
+  .download-left_info {
+    font-size: 28px;
+  }
+}
+
+.download-left_img {
+  margin-top: 30px;
+  margin-inline: auto;
+  width: 100%;
+  max-width: 300px;
+}
+
+.download-left_txt {
+  margin-top: 28px;
+}
+@media screen and (min-width: 768px) {
+  .download-left_txt {
+    margin-top: 25px;
+  }
+}
+
+.download-right {
+  margin-top: 60px;
+  width: 100%;
+  max-width: 500px;
+  margin-inline: auto;
+  border-radius: 12px;
+  background-color: #EDF3F8;
+  padding: 38px 20px 41px;
+}
+@media screen and (min-width: 768px) {
+  .download-right {
+    width: 50%;
+    max-width: 550px;
+    margin-top: -2px;
+    margin-inline: 0;
+    padding: 39px 40px 41px;
+  }
+}
+
+.download-right_ttl {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.7;
+}
+@media screen and (min-width: 768px) {
+  .download-right_ttl {
+    font-size: 32px;
+    line-height: 1.55;
+  }
+}
+
+.download-right_txt {
+  margin-top: 34px;
+  line-height: 1.6;
+}
+@media screen and (min-width: 768px) {
+  .download-right_txt {
+    margin-top: 35px;
+    line-height: 1.5;
+  }
+}
+.download-right_txt a {
+  display: block;
+  line-height: 1;
+  color: #023E78;
+  text-decoration: underline;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.download-right_txt a:hover {
+  opacity: 0.6;
+}
