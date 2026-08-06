@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Document</title>
+    <meta name="description" content="あなたの見つけたレトロな尾道の一枚をInstagramに投稿しよう">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/front-page.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header id="header js-header" class="header">
+            <div class="header-bg">
+                <div class="header-inner">
+
+                    <!-- header-logo -->
+                    <h1 class="header-logo">
+                        <a href="#">
+                            <img class="logo-blue" src="./img/site-logo-blue.png" alt="">
+                            <img class="logo-white" src="./img/site-logo-white.png" alt="">
+                        </a>
+                    </h1>
+                    <!-- header-logo -->
+
+                    <!-- header-nav -->
+                    <nav class="header-nav">
+                        <ul class="header-nav_links">
+                            <li><a href="" class="header-nav_link header-nav_link-home is-focus">ホーム</a></li>
+                            <li><a href="" class="header-nav_link header-nav_link-about">当院について</a></li>
+                            <li><a href="" class="header-nav_link header-nav_link-medical">診療案内</a></li>
+                            <li><a href="" class="header-nav_link header-nav_link-staff">スタッフ紹介</a></li>
+                            <li><a href="" class="header-nav_link header-nav_link-blog">スタッフブログ</a></li>
+                            <li><a href="" class="header-nav_link header-nav_link-contact">お問い合わせ</a></li>
+                        </ul>
+
+                        <div class="header-nav_tel">
+                            <p>〒166-0001 東京都杉並区阿佐谷北7-3-1</p>
+                            <a href="tel:0312345678">03-1234-5678</a>
+                        </div>
+                    </nav>
+
+                    <!-- hamburger -->
+                    <div class="hamburger">
+                        <button type="button" id="js-drawer-icon" class="drawer-icon">
+                            <span class="drawer-icon_bar"></span>
+                            <span class="drawer-icon_bar"></span>
+                            <span class="drawer-icon_bar"></span>
+                        </button>
+                    </div>
+                    <!-- hamburger -->
+                </div>
+            </div>
+        </header>
+
+        <!-- Drawer Content -->
+        <div id="js-drawer-content" class="drawer-content">
+            <nav class="drawer-content_menu" aria-label="ドロワーメニューナビゲーション">
+                <ul class="drawer-nav_links">
+                    <li><a href="" class="drawer-content_link drawer-content_link-home">ホーム</a></li>
+                    <li><a href="" class="drawer-content_link drawer-content_link-about">当院について</a></li>
+                    <li><a href="" class="drawer-content_link drawer-content_link-medical">診療案内</a></li>
+                    <li><a href="" class="drawer-content_link drawer-content_link-staff">スタッフ紹介</a></li>
+                    <li><a href="" class="drawer-content_link drawer-content_link-blog">スタッフブログ</a></li>
+                    <li><a href="" class="drawer-content_link drawer-content_link-contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Drawer Content -->
+
+        <div class="fixed-bottom">
+            <div class="fixed-bottom_tell">
+                <a href="tel:0312345678">03-1234-5678</a>
+                <p>(年中無休 AM9:00〜PM22:00)</p>
+            </div>
+
+            <div class="fixed-bottom_booking">
+                <a href="" class="btn">
+                    <p class="btn_txt-top">WEB予約</p>
+                    <p class="btn_txt-bottom">はこちら</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="fixed-side">
+            <a href="" class="btn">
+                <p>WEB予約<br>はこちら</p>
+            </a>
+        </div>
+
+        <main>
+            <div id="mv" class="mv">
+                <div class="mv-slider">
+                    <!-- Slider main container -->
+                    <div id="js-mv-swiper" class="swiper mv-swiper">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                            <!-- Slides -->
+                            <div class="swiper-slide">
+                                <div class="swiper-slide_wrap">
+                                    <picture>
+                                        <source media="(min-width: 768px)" srcset="./img/mv-slide1-pc.png">
+                                        <img src="./img/mv-slide1-sp.png" alt="メインビジュアル画像１">
+                                    </picture>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper-slide_wrap">
+                                    <picture>
+                                        <source media="(min-width: 768px)" srcset="./img/mv-slide2-pc.png">
+                                        <img src="./img/mv-slide2-sp.png" alt="メインビジュアル画像２">
+                                    </picture>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="swiper-slide_wrap">
+                                    <picture>
+                                        <source media="(min-width: 768px)" srcset="./img/mv-slide3-pc.png">
+                                        <img src="./img/mv-slide3-sp.png" alt="メインビジュアル画像３">
+                                    </picture>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-txt">
+                            <picture>
+                                <source media="(min-width: 768px)" srcset="./img/top-text-pc.png">
+                                <img src="./img/top-text-sp.png" alt="テキスト：街の皆さまの笑顔を守るアットホームな歯医者さん">
+                            </picture>
+                        </div>
+
+                        <!-- If we need pagination -->
+                        <div id="js-mv-pagination" class="swiper-pagination mv-pagination"></div>
+
+                        <!-- If we need navigation buttons -->
+                        <div id="js-mv-prev" class="swiper-button-prev mv-prev"></div>
+                        <div id="js-mv-next" class="swiper-button-next mv-next"></div>
+                    </div>
+                </div>
+
+                <div class="mv-info">
+                    <div class="mv-inner inner">
+                        <picture class="mv-timeschedule">
+                            <source media="(min-width: 768px)" srcset="./img/medical-time-pc.png">
+                            <img src="./img/medical-time-sp.png" alt="診察時間">
+                        </picture>
+
+                        <div class="mv-notice">
+                            <div class="notice-top">
+                                <div class="notice-top_left">
+                                    <h2>お知らせ</h2>
+                                    <span>NEWS</span>
+                                </div>
+                                <a class="notice-top_right" href="">過去のお知らせはこちら</a>
+                            </div>
+                            <a class="notice-bottom" href="">
+                                <time class="notice-bottom_time" datetime="2021-01-01">2021.01.01</time>
+                                <p class="notice-bottom_txt">年末年始の営業時間のお知らせ</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section id="concept" class="concept common-sec01">
+                <picture class="concept_bg common-sec01_bg">
+                    <source media="(min-width: 768px)" srcset="./img/deco-pc.png">
+                    <img src="./img/deco-sp.png" alt="Conceptの背景画像">
+                </picture>
+                <div class="concept_wrap common-sec01_wrap">
+                    <div class="concept_wrap-left common-sec01_wrap-left">
+                        <img src="./img/concept-img.png" alt="Conceptのイメージ画像">
+                    </div>
+                    <div class="concept_wrap-right common-sec01_wrap-right">
+                        <p class="concept_subttl common-sec01_subttl">concept</p>
+                        <p class="concept_mainttl common-sec01_mainttl">
+                            健康的で素敵な笑顔あふれる<br>街づくりを目指して
+                        </p>
+                        <p class="concept_txt common-sec01_txt">
+                            私たちは最新の医療技術を追求すると共に、患者様とのコミュニケーションを大事することで、気軽に通いやすく些細なことでも相談できる「街の掛かり付け医」を目指しております。<br>
+                            お子様からご高齢の方まで、快適な空間で治療が受けられる場を作り、地域医療に貢献しきたいと考えております。
+                        </p>
+                        <div class="concept_btn common-sec01_btn">
+                            <a class="btn" href="">当院について</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="recommend" class="recommend">
+                <div class="inner">
+                    <div class="sec-ttl">
+                        <h2>当院の3つのおすすめ</h2>
+                    </div>
+
+                    <div class="recommend-steps">
+                        <div class="recommend-step">
+                            <div class="recommend-step_ttl">
+                                <img src="./img/recommend-1.png" alt="">
+                            </div>
+
+                            <div class="recommend-step_img">
+                                <img src="./img/recommend-img1.png" alt="">
+                            </div>
+
+                            <div class="recommend-step_txt">
+                                <p>
+                                    歯の治療において、小さな違和感は大きなストレスにつながります。<br>私たちは常に快適な歯科医療技術の研究を行っております。
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="recommend-step">
+                            <div class="recommend-step_ttl">
+                                <img src="./img/recommend-2.png" alt="">
+                            </div>
+
+                            <div class="recommend-step_img">
+                                <img src="./img/recommend-img2.png" alt="">
+                            </div>
+
+                            <p class="recommend-step_txt">
+                                「通いやすさ」も医院選びの重要なポイントと考え、2019年のリニューアルを期に更に駅の近くへ場所を移しました。
+                            </p>
+                        </div>
+
+                        <div class="recommend-step">
+                            <div class="recommend-step_ttl">
+                                <img src="./img/recommend-3.png" alt="">
+                            </div>
+
+                            <div class="recommend-step_img">
+                                <img src="./img/recommend-img3.png" alt="">
+                            </div>
+
+                            <div class="recommend-step_txt">
+                                <p>
+                                    朝から夜までお仕事をされている方のために、診療時間を見直しました。
+                                </p>
+                                <p class="txt-red">
+                                    ※駆け込みでも対応可能ですが、事前にご連絡いただけるとスムーズです。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="guide" class="guide common-sec02">
+                <div class="guide_bg-top common-sec02_bg-top"></div>
+
+                <div class="guide-wrap common-sec02_wrap">
+                    <div class="inner">
+                        <div class="guide-contents common-sec02_contents">
+                            <div class="sec-ttl">
+                                <h2>診療案内</h2>
+                            </div>
+
+                            <div class="guide-wrap_cards common-sec02_cards">
+                                <a href="" class="guide-wrap_card common-sec02_card">
+                                    <div class="guide-wrap_bg common-sec02_card-bg">
+                                        <img src="./img/guide-img1.png" alt="一般診療の画像">
+                                    </div>
+
+                                    <div class="guide-wrap_info common-sec02_card-info">
+                                        <p class="guide-wrap_info-ttl common-sec02_card-info-ttl">
+                                            一般診療
+                                        </p>
+                                        <p class="guide-wrap_info-txt common-sec02_card-info-txt">
+                                            虫歯・入れ歯・小児歯科
+                                        </p>
+                                    </div>
+                                </a>
+
+                                <a href="" class="guide-wrap_card common-sec02_card">
+                                    <div class="guide-wrap_bg common-sec02_card-bg">
+                                        <img src="./img/guide-img2.png" alt="特殊診療の画像">
+                                    </div>
+
+                                    <div class="guide-wrap_info common-sec02_card-info">
+                                        <p class="guide-wrap_info-ttl common-sec02_card-info-ttl">
+                                            特殊診療
+                                        </p>
+                                        <p class="guide-wrap_info-txt common-sec02_card-info-txt">
+                                            インプラント・ホワイトニング<br>予防歯科・口腔外科・審美歯科
+                                        </p>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="guide-contents_txt common-sec02_contents-txt">
+                                <p>
+                                    当院では、患者さんの歯の健康状態や治療方針を丁寧にカウンセリングし、十分ご理解していただいた上で治療いたします。<br>痛みに配慮することと、可能な限り削らない・抜かない治療に努めております。
+                                </p>
+                                <p class="txt-red">
+                                    ※特殊性の高い矯正治療などは保険の適応外となります。 これらの治療を行う際は事前に詳細と費用のご説明いたします。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="guide_bg-bottom common-sec02_bg-bottom"></div>
+            </section>
+
+            <section id="blog" class="blog common-sec03">
+                <div class="inner">
+                    <div class="sec-ttl">
+                        <h2>スタッフブログ</h2>
+                    </div>
+
+                    <div class="blog-cards common-sec03_cards">
+                        <a class="blog-card common-sec03_card" href="">
+                            <div class="blog-card_img common-sec03_card-img">
+                                <img src="./img/blog-img1.png" alt="">
+                            </div>
+                            <div class="blog-card_txt common-sec03_card-txt">
+                                <p class="blog-card_tag common-sec03_card-tag">歯科コラム</p>
+                                <p class="blog-card_ttl common-sec03_card-ttl">
+                                    歯周病と虫歯の違いを詳しく解説
+                                </p>
+                                <time class="blog-card_ymd common-sec03_card-ymd" datetime="2020-02-14">
+                                    2020.02.14
+                                </time>
+                            </div>
+                        </a>
+
+                        <a class="blog-card common-sec03_card" href="">
+                            <div class="blog-card_img common-sec03_card-img">
+                                <img src="./img/blog-img2.png" alt="">
+                            </div>
+                            <div class="blog-card_txt common-sec03_card-txt">
+                                <p class="blog-card_tag common-sec03_card-tag">患者様の声</p>
+                                <p class="blog-card_ttl common-sec03_card-ttl">
+                                    インプラント治療で噛む力が戻った！実際の体験談（50…
+                                </p>
+                                <time class="blog-card_ymd common-sec03_card-ymd" datetime="2024-12-02">
+                                    2024.12.02
+                                </time>
+                            </div>
+                        </a>
+
+                        <a class="blog-card common-sec03_card" href="">
+                            <div class="blog-card_img common-sec03_card-img">
+                                <img src="./img/blog-img3.png" alt="">
+                            </div>
+                            <div class="blog-card_txt common-sec03_card-txt">
+                                <p class="blog-card_tag common-sec03_card-tag">小児歯科</p>
+                                <p class="blog-card_ttl common-sec03_card-ttl">
+                                    子どもの歯の健康を守るために知っておきたい！年齢別…
+                                </p>
+                                <time class="blog-card_ymd common-sec03_card-ymd" datetime="2024-11-22">
+                                    2024.11.22
+                                </time>
+                            </div>
+                        </a>
+
+                        <a class="blog-card common-sec03_card" href="">
+                            <div class="blog-card_img common-sec03_card-img">
+                                <img src="./img/blog-img4.png" alt="">
+                            </div>
+                            <div class="blog-card_txt common-sec03_card-txt">
+                                <p class="blog-card_tag common-sec03_card-tag">歯科コラム</p>
+                                <p class="blog-card_ttl common-sec03_card-ttl">
+                                    インプラントとブリッジの違いとは？どちらが最適？
+                                </p>
+                                <time class="blog-card_ymd common-sec03_card-ymd" datetime="2024-11-10">
+                                    2024.11.10
+                                </time>
+                            </div>
+                        </a>
+
+                        <a class="blog-card common-sec03_card" href="">
+                            <div class="blog-card_img common-sec03_card-img">
+                                <img src="./img/blog-img5.png" alt="">
+                            </div>
+                            <div class="blog-card_txt common-sec03_card-txt">
+                                <p class="blog-card_tag common-sec03_card-tag">小児歯科</p>
+                                <p class="blog-card_ttl common-sec03_card-ttl">
+                                    乳歯が生え始めたら気をつけるポイントとは？
+                                </p>
+                                <time class="blog-card_ymd common-sec03_card-ymd" datetime="2024-08-17">
+                                    2024.08.17
+                                </time>
+                            </div>
+                        </a>
+
+                        <a class="blog-card common-sec03_card" href="">
+                            <div class="blog-card_img common-sec03_card-img">
+                                <img src="./img/blog-img6.png" alt="">
+                            </div>
+                            <div class="blog-card_txt common-sec03_card-txt">
+                                <p class="blog-card_tag common-sec03_card-tag">歯科コラム</p>
+                                <p class="blog-card_ttl common-sec03_card-ttl">
+                                    知っておきたい！矯正治療のメリットとデメリット
+                                </p>
+                                <time class="blog-card_ymd common-sec03_card-ymd" datetime="2024-07-29">
+                                    2024.07.29
+                                </time>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="blog_btn common-sec03_btn">
+                        <a class="btn" href="">スタッフブログ一覧はこちら</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer id="footer" class="footer">
+            <div class="footer_wave"></div>
+
+            <div class="footer-wrap">
+                <div class="footer-inner">
+                    <div class="footer-intro">
+                        <div class="footer-info">
+                            <div class="footer-intro_ttl">
+                                <div class="footer-intro_ttl-img">
+                                    <img src="./img/site-logo-blue.png" alt="">
+                                </div>
+                                <div class="footer-intro_ttl-txt">
+                                    <p>〒166-0001</p>
+                                    <p>東京都杉並区阿佐谷北7-3-1</p>
+                                </div>
+                            </div>
+
+                            <div class="footer-intro_tell">
+                                <a href="tel:0312345678">03-1234-5678</a>
+                                <p>(年中無休 AM9:00〜PM22:00)</p>
+                            </div>
+
+                            <div class="footer-intro_btn">
+                                <div class="booking-btn">
+                                    <a href="" class="btn">
+                                        <span>WEB予約</span>
+                                    </a>
+                                </div>
+                                <div class="contact-btn">
+                                    <a href="" class="btn">
+                                        <span>お問い合わせ</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="footer-timeschedule">
+                                <picture>
+                                    <source media="(min-width: 768px)" srcset="./img/medical-time-pc.png">
+                                    <img src="./img/medical-time-sp.png" alt="診察時間">
+                                </picture>
+                            </div>
+                        </div>
+
+                        <div class="footer-map">
+                            <div class="footer-map_wrap">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12958.979292250246!2d139.6230926674193!3d35.707896594326634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1780676382490!5m2!1sja!2sjp"
+                                    width="600" height="600" style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <ul class="footer-nav">
+                        <li class="footer-nav_top">
+                            <a href="">TOP</a>
+                        </li>
+                        <li class="footer-nav_top">
+                            当院について
+                            <ul class="footer-nav_child">
+                                <li>
+                                    <a href="">ポリシーと特徴</a>
+                                </li>
+                                <li>
+                                    <a href="">当院の様子</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="footer-nav_top">
+                            スタッフ紹介
+                            <ul class="footer-nav_child">
+                                <li>
+                                    <a href="">院長のあいさつ</a>
+                                </li>
+                                <li>
+                                    <a href="">スタッフ</a>
+                                </li>
+                                <li>
+                                    <a href="">スタッフブログ</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="footer-nav_top">
+                            診療内容
+                            <div class="footer-nav_child-wrap">
+                                <ul class="footer-nav_child">
+                                    <li>
+                                        <a href="">一般歯科</a>
+                                    </li>
+                                    <li>
+                                        <a href="">小児歯科</a>
+                                    </li>
+                                    <li>
+                                        <a href="">予防歯科</a>
+                                    </li>
+                                </ul>
+                                <ul class="footer-nav_child">
+                                    <li>
+                                        <a href="">入れ歯</a>
+                                    </li>
+                                    <li>
+                                        <a href="">矯正歯科</a>
+                                    </li>
+                                    <li>
+                                        <a href="">ホワイトニング</a>
+                                    </li>
+                                    <li>
+                                        <a href="">口腔外科</a>
+                                    </li>
+                                    <li>
+                                        <a href="">レーザー治療</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="footer-nav_top">
+                            お問い合わせ
+                            <ul class="footer-nav_child">
+                                <li>
+                                    <a href="">お問い合わせフォーム</a>
+                                </li>
+                                <li>
+                                    <a href="">WEB予約</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div id="js-pagetop" class="page-top" style="display: none;">
+                        <a href="#">
+                            <img src="./img/pagetop.png" alt="ページトップ画像">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>©︎2020-2021 みなみ歯科クリニック</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

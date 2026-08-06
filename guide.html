@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Document</title>
+    <meta name="description" content="あなたの見つけたレトロな尾道の一枚をInstagramに投稿しよう">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/guide.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header id="header js-header" class="header">
+            <div class="header-bg">
+                <div class="header-inner">
+
+                    <!-- header-logo -->
+                    <h1 class="header-logo">
+                        <a href="#">
+                            <img class="logo-blue" src="./img/site-logo-blue.png" alt="">
+                            <img class="logo-white" src="./img/site-logo-white.png" alt="">
+                        </a>
+                    </h1>
+                    <!-- header-logo -->
+
+                    <!-- header-nav -->
+                    <nav class="header-nav">
+                        <ul class="header-nav_links">
+                            <li><a href="" class="header-nav_link header-nav_link-home">ホーム</a></li>
+                            <li><a href="" class="header-nav_link header-nav_link-about">当院について</a></li>
+                            <li><a href="" class="header-nav_link header-nav_link-medical is-focus">診療案内</a></li>
+                            <li><a href="" class="header-nav_link header-nav_link-staff">スタッフ紹介</a></li>
+                            <li><a href="" class="header-nav_link header-nav_link-blog">スタッフブログ</a></li>
+                            <li><a href="" class="header-nav_link header-nav_link-contact">お問い合わせ</a></li>
+                        </ul>
+
+                        <div class="header-nav_tel">
+                            <p>〒166-0001 東京都杉並区阿佐谷北7-3-1</p>
+                            <a href="tel:0312345678">03-1234-5678</a>
+                        </div>
+                    </nav>
+
+                    <!-- hamburger -->
+                    <div class="hamburger">
+                        <button type="button" id="js-drawer-icon" class="drawer-icon">
+                            <span class="drawer-icon_bar"></span>
+                            <span class="drawer-icon_bar"></span>
+                            <span class="drawer-icon_bar"></span>
+                        </button>
+                    </div>
+                    <!-- hamburger -->
+                </div>
+            </div>
+        </header>
+
+        <!-- Drawer Content -->
+        <div id="js-drawer-content" class="drawer-content">
+            <nav class="drawer-content_menu" aria-label="ドロワーメニューナビゲーション">
+                <ul class="drawer-nav_links">
+                    <li><a href="" class="drawer-content_link drawer-content_link-home">ホーム</a></li>
+                    <li><a href="" class="drawer-content_link drawer-content_link-about">当院について</a></li>
+                    <li><a href="" class="drawer-content_link drawer-content_link-medical">診療案内</a></li>
+                    <li><a href="" class="drawer-content_link drawer-content_link-staff">スタッフ紹介</a></li>
+                    <li><a href="" class="drawer-content_link drawer-content_link-blog">スタッフブログ</a></li>
+                    <li><a href="" class="drawer-content_link drawer-content_link-contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Drawer Content -->
+
+        <div class="fixed-bottom">
+            <div class="fixed-bottom_tell">
+                <a href="tel:0312345678">03-1234-5678</a>
+                <p>(年中無休 AM9:00〜PM22:00)</p>
+            </div>
+
+            <div class="fixed-bottom_booking">
+                <a href="" class="btn">
+                    <p class="btn_txt-top">WEB予約</p>
+                    <p class="btn_txt-bottom">はこちら</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="fixed-side">
+            <a href="" class="btn">
+                <p>WEB予約<br>はこちら</p>
+            </a>
+        </div>
+
+        <div class="page-header">
+            <div class="page-header_inner guide-header_inner">
+                <div class="page-header_ttl-area">
+                    <p class="page-header_ttl-ja">
+                        診療案内
+                    </p>
+                    <p class="page-header_ttl-en">
+                        MEDICAL
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- breadcrumb -->
+        <div class="breadcrumb">
+            <span property="itemListElement" typeof="ListItem">
+                <a property="item" typeof="WebPage" href="/" class="home"><span property="name">ホーム</span></a>
+                <meta property="position" content="1">
+            </span>
+            <span class="breadcrumb-arrow">＞</span>
+            <span class="current-item">診療案内</span>
+        </div><!-- /breadcrumb -->
+
+        <main>
+            <section class="tags">
+                <div class="inner">
+                    <div class="tags-wrap">
+                        <div class="tags-group">
+                            <p class="tags-group_ttl">一般診療</p>
+                            <p class="tags-group_tag general-tag">保険対象</p>
+                        </div>
+                        <ul class="tags-lists">
+                            <li>
+                                <a href="#general01">
+                                    一般歯科
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#general02">
+                                    小児歯科
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#general03">
+                                    予防歯科
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tags-wrap">
+                        <div class="tags-group">
+                            <p class="tags-group_ttl">特殊診療</p>
+                            <p class="tags-group_tag special-tag">実費</p>
+                        </div>
+                        <ul class="tags-lists">
+                            <li>
+                                <a href="#special01">
+                                    入れ歯
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#special02">
+                                    矯正歯科
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#special03">
+                                    ホワイトニング
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#special04">
+                                    口腔外科
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#special05">
+                                    レーザー治療
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="general-medical" class="medical common-sec02">
+                <div class="medical_bg-top common-sec02_bg-top"></div>
+
+                <div class="medical-wrap common-sec02_wrap">
+                    <div class="inner">
+                        <div class="common-sec02_contents">
+                            <div class="sec-ttl">
+                                <h2>一般診療</h2>
+                            </div>
+
+                            <div class="medical-cards">
+                                <div id="general01" class="medical-card general-card">
+                                    <div class="medical-card_head">
+                                        <p class="medical-card_head-mainttl">
+                                            一般歯科
+                                        </p>
+                                        <p class="medical-card_head-subttl">
+                                            虫歯治療、歯茎がしみるなど
+                                        </p>
+                                    </div>
+                                    <div class="medical-card_bottom">
+                                        <div class="medical-card_bottom-left">
+                                            日常的な歯のトラブルに対応する診療です。虫歯の治療や歯周病のケアを行い、歯の健康を維持します。歯の痛みやしみる症状がある場合には、早めの受診をおすすめします。定期的なクリーニングも実施し、将来の歯のトラブル予防に役立てます。<br>
+                                            <br>
+                                            歯を削る際にはできるだけ痛みを抑えた治療を心がけています。お口の中の違和感や気になることがあれば、お気軽にご相談ください。歯の健康を守るために、一人ひとりに合った治療をご提供します。
+                                        </div>
+                                        <div class="medical-card_bottom-right">
+                                            <img src="./img/general-img1.png" alt="一般歯科の画像">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="general02" class="medical-card general-card">
+                                    <div class="medical-card_head">
+                                        <p class="medical-card_head-mainttl">
+                                            小児歯科
+                                        </p>
+                                        <p class="medical-card_head-subttl">
+                                            小さいお子様の歯の治療
+                                        </p>
+                                    </div>
+                                    <div class="medical-card_bottom">
+                                        <div class="medical-card_bottom-left">
+                                            お子様の歯の健康を守るため、虫歯治療や予防処置を行います。乳歯は将来の歯並びや咬み合わせに大きく影響するため、早めのケアが大切です。治療時にはお子様が怖がらないよう、優しい声かけとリラックスできる環境づくりを心がけています。<br>
+                                            <br>
+                                            定期検診では、歯磨き指導やフッ素塗布を通じて虫歯予防をサポートします。お子様が歯医者に通うことを楽しいと感じてもらえるよう、スタッフ一同でサポートいたします。
+                                        </div>
+                                        <div class="medical-card_bottom-right">
+                                            <img src="./img/general-img2.png" alt="小児歯科の画像">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="general03" class="medical-card general-card">
+                                    <div class="medical-card_head">
+                                        <p class="medical-card_head-mainttl">
+                                            予防歯科
+                                        </p>
+                                        <p class="medical-card_head-subttl">
+                                            口腔内のケア全般
+                                        </p>
+                                    </div>
+                                    <div class="medical-card_bottom">
+                                        <div class="medical-card_bottom-left">
+                                            健康な歯を維持するため、虫歯や歯周病の予防を目的としたケアを行います。専門的なクリーニングや、歯垢・歯石の除去を定期的に実施することで、口腔内の健康を保ちます。<br>
+                                            <br>
+                                            また、正しい歯磨きの仕方をお伝えし、セルフケアをサポートします。生活習慣や食生活のアドバイスも行い、お口の健康を総合的にサポートいたします。定期的な受診で、生涯健康な歯を維持しましょう。
+                                        </div>
+                                        <div class="medical-card_bottom-right">
+                                            <img src="./img/general-img3.png" alt="予防歯科の画像">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="guide_bg-bottom common-sec02_bg-bottom"></div>
+            </section>
+
+            <section id="special-medical" class="medical common-sec02">
+                <div class="medical_bg-top common-sec02_bg-top"></div>
+
+                <div class="medical-wrap common-sec02_wrap">
+                    <div class="inner">
+                        <div class="common-sec02_contents">
+                            <div class="sec-ttl">
+                                <h2>特殊診療</h2>
+                            </div>
+
+                            <div class="medical-cards">
+                                <div id="special01" class="medical-card special-card">
+                                    <div class="medical-card_head">
+                                        <p class="medical-card_head-mainttl">
+                                            入れ歯
+                                        </p>
+                                        <p class="medical-card_head-subttl">
+                                            入れ歯を作りたい、調整したい
+                                        </p>
+                                    </div>
+                                    <div class="medical-card_bottom">
+                                        <div class="medical-card_bottom-left">
+                                            失われた歯を補うための入れ歯治療を行います。患者様一人ひとりの噛み合わせや口腔内の状態を丁寧に確認し、快適に使用できる入れ歯を作製します。部分入れ歯や総入れ歯の作成に加え、現在ご使用中の入れ歯の調整や修理も承ります。<br>
+                                            <br>
+                                            入れ歯が合わない、痛みがある、噛みにくいなどのお悩みがございましたら、いつでもご相談ください。自然な見た目と機能性を重視し、快適な毎日をサポートいたします。
+                                        </div>
+                                        <div class="medical-card_bottom-right">
+                                            <img src="./img/special-img1.png" alt="入れ歯の画像">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="special02" class="medical-card special-card">
+                                    <div class="medical-card_head">
+                                        <p class="medical-card_head-mainttl">
+                                            矯正歯科
+                                        </p>
+                                        <p class="medical-card_head-subttl">
+                                            歯並びが気になる
+                                        </p>
+                                    </div>
+                                    <div class="medical-card_bottom">
+                                        <div class="medical-card_bottom-left">
+                                            歯並びや咬み合わせを改善するための矯正治療を行います。矯正は見た目の美しさだけでなく、噛む力のバランスを整え、虫歯や歯周病の予防にもつながります。患者様の希望やライフスタイルに合わせて、目立ちにくい装置や取り外し可能なマウスピース矯正など、さまざまな選択肢をご提案します。<br>
+                                            <br>
+                                            お子様から大人の方まで、幅広い年齢層に対応しております。まずはお気軽に無料相談にお越しください。
+                                        </div>
+                                        <div class="medical-card_bottom-right">
+                                            <img src="./img/special-img2.png" alt="矯正歯科の画像">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="special03" class="medical-card special-card">
+                                    <div class="medical-card_head">
+                                        <p class="medical-card_head-mainttl">
+                                            ホワイトニング
+                                        </p>
+                                        <p class="medical-card_head-subttl">
+                                            歯を白くしたい
+                                        </p>
+                                    </div>
+                                    <div class="medical-card_bottom">
+                                        <div class="medical-card_bottom-left">
+                                            加齢や食生活により黄ばんでしまった歯を、自然な白さに導くホワイトニング治療を行います。歯科医院で施術するオフィスホワイトニングや、ご自宅で手軽にケアできるホームホワイトニングに対応しています。<br>
+                                            <br>
+                                            個々の歯の色や希望に合わせて、最適な施術プランをご提案します。白く輝く歯で、笑顔に自信を持ちませんか？初めての方でも安心して受けていただけるよう、丁寧に説明いたします。
+                                        </div>
+                                        <div class="medical-card_bottom-right">
+                                            <img src="./img/special-img3.png" alt="ホワイトニングの画像">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="special04" class="medical-card special-card">
+                                    <div class="medical-card_head">
+                                        <p class="medical-card_head-mainttl">
+                                            口腔外科
+                                        </p>
+                                        <p class="medical-card_head-subttl">
+                                            インプラント、親知らずの抜歯
+                                        </p>
+                                    </div>
+                                    <div class="medical-card_bottom">
+                                        <div class="medical-card_bottom-left">
+                                            口腔内の外科的処置を専門とする診療科です。親知らずの抜歯や顎関節症の治療、インプラント手術などに対応しています。事前の診査・診断を徹底し、患者様の安全と負担軽減を第一に考えた治療を行います。<br>
+                                            <br>
+                                            症状によっては、CT撮影による精密な診断を実施し、必要に応じて専門機関と連携して治療を進めます。お口まわりの痛みや違和感があれば、お気軽にご相談ください。
+                                        </div>
+                                        <div class="medical-card_bottom-right">
+                                            <img src="./img/special-img4.png" alt="口腔外科の画像">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="special05" class="medical-card special-card">
+                                    <div class="medical-card_head">
+                                        <p class="medical-card_head-mainttl">
+                                            レーザー治療
+                                        </p>
+                                        <p class="medical-card_head-subttl">
+                                            口内炎を治したい
+                                        </p>
+                                    </div>
+                                    <div class="medical-card_bottom">
+                                        <div class="medical-card_bottom-left">
+                                            歯科用レーザーを使用し、痛みや出血を抑えた治療を提供しています。虫歯や歯周病の治療、口内炎の処置など、さまざまな症例に対応可能です。レーザー治療は歯を削る必要が少なく、麻酔が不要な場合もあります。<br>
+                                            <br>
+                                            患者様の負担を軽減し、安心して治療を受けていただけるよう、最新の設備と技術でサポートいたします。痛みが苦手な方やお子様にもおすすめの治療法です。
+                                        </div>
+                                        <div class="medical-card_bottom-right">
+                                            <img src="./img/special-img5.png" alt="レーザー治療の画像">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="guide_bg-bottom common-sec02_bg-bottom"></div>
+            </section>
+        </main>
+
+        <footer id="footer" class="footer">
+            <div class="footer_wave"></div>
+
+            <div class="footer-wrap">
+                <div class="footer-inner">
+                    <div class="footer-intro">
+                        <div class="footer-info">
+                            <div class="footer-intro_ttl">
+                                <div class="footer-intro_ttl-img">
+                                    <img src="./img/site-logo-blue.png" alt="">
+                                </div>
+                                <div class="footer-intro_ttl-txt">
+                                    <p>〒166-0001</p>
+                                    <p>東京都杉並区阿佐谷北7-3-1</p>
+                                </div>
+                            </div>
+
+                            <div class="footer-intro_tell">
+                                <a href="tel:0312345678">03-1234-5678</a>
+                                <p>(年中無休 AM9:00〜PM22:00)</p>
+                            </div>
+
+                            <div class="footer-intro_btn">
+                                <div class="booking-btn">
+                                    <a href="" class="btn">
+                                        <span>WEB予約</span>
+                                    </a>
+                                </div>
+                                <div class="contact-btn">
+                                    <a href="" class="btn">
+                                        <span>お問い合わせ</span>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="footer-timeschedule">
+                                <picture>
+                                    <source media="(min-width: 768px)" srcset="./img/medical-time-pc.png">
+                                    <img src="./img/medical-time-sp.png" alt="診察時間">
+                                </picture>
+                            </div>
+                        </div>
+
+                        <div class="footer-map">
+                            <div class="footer-map_wrap">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d12958.979292250246!2d139.6230926674193!3d35.707896594326634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1780676382490!5m2!1sja!2sjp"
+                                    width="600" height="600" style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+
+                    <ul class="footer-nav">
+                        <li class="footer-nav_top">
+                            <a href="">TOP</a>
+                        </li>
+                        <li class="footer-nav_top">
+                            当院について
+                            <ul class="footer-nav_child">
+                                <li>
+                                    <a href="">ポリシーと特徴</a>
+                                </li>
+                                <li>
+                                    <a href="">当院の様子</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="footer-nav_top">
+                            スタッフ紹介
+                            <ul class="footer-nav_child">
+                                <li>
+                                    <a href="">院長のあいさつ</a>
+                                </li>
+                                <li>
+                                    <a href="">スタッフ</a>
+                                </li>
+                                <li>
+                                    <a href="">スタッフブログ</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="footer-nav_top">
+                            診療内容
+                            <div class="footer-nav_child-wrap">
+                                <ul class="footer-nav_child">
+                                    <li>
+                                        <a href="">一般歯科</a>
+                                    </li>
+                                    <li>
+                                        <a href="">小児歯科</a>
+                                    </li>
+                                    <li>
+                                        <a href="">予防歯科</a>
+                                    </li>
+                                </ul>
+                                <ul class="footer-nav_child">
+                                    <li>
+                                        <a href="">入れ歯</a>
+                                    </li>
+                                    <li>
+                                        <a href="">矯正歯科</a>
+                                    </li>
+                                    <li>
+                                        <a href="">ホワイトニング</a>
+                                    </li>
+                                    <li>
+                                        <a href="">口腔外科</a>
+                                    </li>
+                                    <li>
+                                        <a href="">レーザー治療</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="footer-nav_top">
+                            お問い合わせ
+                            <ul class="footer-nav_child">
+                                <li>
+                                    <a href="">お問い合わせフォーム</a>
+                                </li>
+                                <li>
+                                    <a href="">WEB予約</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div id="js-pagetop" class="page-top" style="display: none;">
+                        <a href="#">
+                            <img src="./img/pagetop.png" alt="ページトップ画像">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>©︎2020-2021 みなみ歯科クリニック</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
