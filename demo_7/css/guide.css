@@ -1,0 +1,295 @@
+.guide-header_inner {
+  background-image: url(../img/page-guide_top-sp.png);
+}
+@media screen and (min-width: 768px) {
+  .guide-header_inner {
+    background-image: url(../img/page-guide_top-pc.png);
+  }
+}
+
+.tags {
+  margin-top: 60px;
+}
+@media screen and (min-width: 768px) {
+  .tags {
+    margin-top: 80px;
+  }
+}
+
+.tags-wrap {
+  display: grid;
+  gap: 30px;
+}
+.tags-wrap:nth-of-type(n+2) {
+  margin-top: 80px;
+}
+
+.tags-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 24px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.tags-group p {
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.8px;
+  text-align: center;
+}
+
+.tags-group_ttl {
+  font-size: 20px;
+}
+@media screen and (min-width: 768px) {
+  .tags-group_ttl {
+    font-size: 28px;
+  }
+}
+
+.tags-group_tag {
+  padding: 7px 12px;
+  font-size: 14px;
+  color: #fff;
+  border-radius: 24px;
+}
+
+.general-tag {
+  background-color: #1391E6;
+}
+
+.special-tag {
+  background-color: #EE5A6D;
+}
+
+.tags-lists {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 16px;
+}
+@media screen and (min-width: 768px) {
+  .tags-lists {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+
+.tags-lists li a {
+  padding: 14px 19px;
+  border: solid 1px #1391E6;
+  border-radius: 12px;
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.8px;
+  color: #1391E6;
+  text-align: center;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+@media screen and (min-width: 768px) {
+  .tags-lists li a {
+    padding: 16px 30px;
+    font-size: 24px;
+    width: auto;
+    border-width: 2px;
+  }
+}
+.tags-lists li a:hover {
+  padding-block: 7px 27px;
+  background-color: #DFF1FD;
+  position: relative;
+}
+.tags-lists li a:hover::after {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 7px;
+  content: "";
+  width: 20px;
+  height: 20px;
+  -webkit-mask-image: url(../img/guide-tag-arrow.svg);
+          mask-image: url(../img/guide-tag-arrow.svg);
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-position: center center;
+          mask-position: center center;
+  -webkit-mask-size: contain;
+          mask-size: contain;
+  background-color: #1391E6;
+}
+
+.medical {
+  margin-top: 100px;
+}
+@media screen and (min-width: 768px) {
+  .medical {
+    margin-top: 160px;
+  }
+}
+
+.medical-cards {
+  margin-block: 40px 8px;
+}
+@media screen and (min-width: 768px) {
+  .medical-cards {
+    margin-block: 60px 0;
+  }
+}
+
+.medical-card {
+  padding: 20px;
+  border-radius: 20px;
+  width: 100%;
+  background-color: #fff;
+  position: relative;
+}
+@media screen and (min-width: 768px) {
+  .medical-card {
+    padding: 60px;
+  }
+}
+.medical-card:nth-of-type(n+2) {
+  margin-top: 40px;
+}
+.medical-card::before {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  content: "";
+  width: 80px;
+  height: 60px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+@media screen and (min-width: 768px) {
+  .medical-card::before {
+    right: 60px;
+    width: 100px;
+    height: 80px;
+  }
+}
+
+.general-card::before {
+  background-image: url(../img/general-tag-sp.png);
+}
+@media screen and (min-width: 768px) {
+  .general-card::before {
+    background-image: url(../img/general-tag-pc.png);
+  }
+}
+
+.medical-card_head {
+  padding-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  border-bottom: solid 1px #888;
+}
+@media screen and (min-width: 768px) {
+  .medical-card_head {
+    padding-bottom: 36px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 40px;
+  }
+}
+
+.medical-card_head-mainttl {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: 0.8px;
+}
+@media screen and (min-width: 768px) {
+  .medical-card_head-mainttl {
+    font-size: 28px;
+    line-height: 1.5;
+  }
+}
+
+.medical-card_head-subttl {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.8px;
+  color: #1391E6;
+}
+@media screen and (min-width: 768px) {
+  .medical-card_head-subttl {
+    line-height: 1.5;
+  }
+}
+
+.medical-card_bottom {
+  margin-top: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 16px;
+}
+@media screen and (min-width: 768px) {
+  .medical-card_bottom {
+    margin-top: 36px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    gap: 40px;
+  }
+}
+
+.medical-card_bottom-left,
+.medical-card_bottom-right {
+  width: 100%;
+}
+
+.general-card::before {
+  background-image: url(../img/general-tag-sp.png);
+}
+@media screen and (min-width: 768px) {
+  .general-card::before {
+    background-image: url(../img/general-tag-pc.png);
+  }
+}
+
+.special-card::before {
+  background-image: url(../img/special-tag-sp.png);
+}
+@media screen and (min-width: 768px) {
+  .special-card::before {
+    background-image: url(../img/special-tag-pc.png);
+  }
+}

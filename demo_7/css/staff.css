@@ -1,0 +1,246 @@
+.common_group-ttl {
+  padding-bottom: 6px;
+  font-size: 16px;
+  line-height: 1.5;
+  border-bottom: solid 1px #393939;
+}
+
+.staff-header_inner {
+  background-image: url(../img/page-staff_top-sp.png);
+}
+@media screen and (min-width: 768px) {
+  .staff-header_inner {
+    background-image: url(../img/page-staff_top-pc.png);
+  }
+}
+
+.head {
+  margin-top: 60px;
+}
+@media screen and (min-width: 768px) {
+  .head {
+    margin-top: 80px;
+  }
+}
+
+.head-wrap {
+  margin-top: 40px;
+}
+@media screen and (min-width: 768px) {
+  .head-wrap {
+    margin-top: 60px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 80px;
+  }
+}
+
+.head-info,
+.head-info_img-pc {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .head-info,
+  .head-info_img-pc {
+    max-width: 460px;
+  }
+}
+
+.head-info_main-msg {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.8px;
+}
+@media screen and (min-width: 768px) {
+  .head-info_main-msg {
+    font-size: min(28px, 3vw);
+  }
+}
+
+.head-info_msg-txt {
+  margin-top: 20px;
+  display: grid;
+  gap: 14px;
+}
+@media screen and (min-width: 768px) {
+  .head-info_msg-txt {
+    margin-top: 40px;
+  }
+}
+
+.head-info_nm {
+  margin-top: 14px;
+  text-align: right;
+}
+
+.head-info_img-sp {
+  margin-top: 40px;
+}
+
+.head-info_his-wrap {
+  margin-top: 40px;
+}
+@media screen and (min-width: 768px) {
+  .head-info_his-wrap {
+    margin-top: 60px;
+  }
+}
+
+.head-info_his-tbl {
+  margin-top: 14px;
+}
+.head-info_his-tbl tbody {
+  display: grid;
+  gap: 14px;
+}
+.head-info_his-tbl tbody tr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 14px;
+}
+.head-info_his-tbl tbody tr th {
+  width: 50px;
+}
+.head-info_his-tbl tbody tr td {
+  width: calc(100% - 64px);
+}
+
+.head-info_lic-wrap {
+  margin-top: 30px;
+}
+
+.head-info_lic-tbl {
+  margin-top: 14px;
+  display: grid;
+  gap: 14px;
+}
+
+.staff-slider {
+  margin-top: 100px;
+}
+@media screen and (min-width: 768px) {
+  .staff-slider {
+    margin-top: 160px;
+  }
+}
+
+.staff-gallery {
+  margin-top: 100px;
+}
+@media screen and (min-width: 768px) {
+  .staff-gallery {
+    margin-top: 160px;
+  }
+}
+
+.gallery-wrap {
+  margin-top: 40px;
+  display: grid;
+  gap: 40px;
+}
+@media screen and (min-width: 768px) {
+  .gallery-wrap {
+    margin-top: 60px;
+    gap: 60px;
+  }
+}
+
+.gallery-cards {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 40px;
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .gallery-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px 74px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .gallery-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.gallery-cards li {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 600px;
+}
+@media screen and (min-width: 768px) {
+  .gallery-cards li {
+    max-width: auto;
+  }
+}
+
+.gallery-card_nm-wrap {
+  margin-top: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 12px;
+}
+
+.gallery-card_cml {
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.8px;
+}
+
+.gallery-card_nm {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.8px;
+}
+
+.gallery-card_tbl {
+  margin-top: 15px;
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.gallery-card_tbl tr {
+  display: grid;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  text-align: left;
+  grid-template-rows: auto;
+  grid-template-columns: 41.7910447761% 58.2089552239%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+@media screen and (min-width: 768px) {
+  .gallery-card_tbl tr {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.gallery-card_tbl tr:nth-of-type(n+2) {
+  margin-top: 1px;
+}
+.gallery-card_tbl tr th,
+.gallery-card_tbl tr td {
+  padding: 17px 20px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.gallery-card_tbl tr th {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #DFF1FD;
+}
