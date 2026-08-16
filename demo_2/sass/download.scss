@@ -1,0 +1,345 @@
+@use "sass:map";
+
+// ================================================================================
+// responsive
+// ================================================================================
+$breakpoints: (
+    1280: "screen and (min-width: 1280px)",
+    980: "screen and (min-width: 980px)",
+    pc: "screen and (min-width: 768px)",
+    sp: "screen and (max-width: 767px)",
+);
+
+@mixin mq($breakpoint: pc) {
+    @media #{map.get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+
+// ================================================================================
+// download
+// ================================================================================
+.download-page {
+    margin-top: 69px;
+    margin-bottom: 100px;
+
+    @include mq(pc) {
+        margin-top: 79px;
+        margin-bottom: 158px;
+    }
+}
+
+.download-page_inner {
+    padding-inline: 20px;
+    margin-inline: auto;
+
+    @include mq(pc) {
+        // padding-inline: 7%;
+        padding-inline: 40px;
+        max-width: calc(1100px + 80px);
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.download-left {
+    width: 100%;
+    max-width: 500px;
+    margin-inline: auto;
+
+    @include mq(pc) {
+        width: 47%;
+        max-width: 510px;
+        margin-inline: 0;
+    }
+}
+
+.download-left_info {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.4;
+
+    @include mq(pc) {
+        font-size: 28px;
+    }
+}
+
+.download-left_img {
+    margin-top: 30px;
+    // text-align: center;
+    // padding-inline: 5vw;
+    margin-inline: auto;
+    width: 100%;
+    max-width: 300px;
+
+    // @include mq(pc) {
+    //     // padding-inline: 0;
+    //     max-width: 300px;
+    // }
+}
+
+.download-left_txt {
+    margin-top: 24px;
+
+    @include mq(pc) {
+        margin-top: 25px;
+    }
+}
+
+.download-right {
+    margin-top: 60px;
+    width: 100%;
+    max-width: 500px;
+    margin-inline: auto;
+    border-radius: 12px;
+    background-color: #EDF3F8;
+    padding: 49px 5.8% 41px;
+
+    @include mq(pc) {
+        width: 50%;
+        max-width: 550px;
+        margin-top: -2px;
+        margin-inline: 0;
+        padding: 47px 40px 41px;
+    }
+}
+
+.download-right_ttl {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+
+    @include mq(pc) {
+        font-size: 32px;
+    }
+}
+
+.download-form {
+    margin-top: 44px;
+
+    @include mq(pc) {
+        margin-top: 46px;
+    }
+}
+
+.download-form_field {
+    &:nth-child(n+2) {
+        margin-top: 20px;
+
+        @include mq(pc) {
+            margin-top: 31px;
+        }
+    }
+}
+
+.download-form_field-head {
+    display: flex;
+    align-items: center;
+}
+
+.download-form_field-label {
+    font-weight: 700;
+    line-height: 1.29;
+
+    @include mq(pc) {
+        font-size: 18px;
+    }
+}
+
+.download-form_field-tag {
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1.6;
+    color: #fff;
+    text-align: center;
+    padding: 1px 8px;
+    background-color: #E61264;
+    margin-left: 8px;
+
+    @include mq(pc) {
+        margin-left: 10px;
+        padding: 2px 10px 3px;
+    }
+}
+
+.download-form_field-item {
+    margin-top: 8px;
+    flex-grow: 1;
+
+    @include mq(pc) {
+        margin-top: 12px;
+    }
+}
+
+.download-form_field-text {
+    width: 100%;
+    border-radius: 5px;
+    border: 2px solid #ddd;
+    background: #fff;
+    padding: 8px 13px;
+    transition: all 0.5s;
+
+    @include mq(pc) {
+        padding-inline: 16px;
+    }
+
+    &:hover {
+        border-color: #1a1a1a;
+        border-width: 2px;
+        outline: none;
+    }
+}
+
+input {
+    outline: none;
+
+    &::placeholder {
+        color: #ccc;
+    }
+
+    &:focus {
+        border-color: #1a1a1a;
+    }
+}
+
+// input::placeholder {
+//     color: #ccc;
+// }
+
+.download-form_privacy {
+    margin-top: 40px;
+
+    @include mq(pc) {
+        margin-top: 45px;
+    }
+}
+
+.download-form_privacy-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.download-form_checkbox {
+    &:hover {
+        // .download-form_checkbox-text {
+        .wpcf7-list-item-label {
+            &::before {
+                border-color: #023E78;
+            }
+        }
+    }
+}
+
+.download-form_checkbox-input {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    overflow: hidden;
+
+    &:checked {
+        // +.download-form_checkbox-text {
+        +.wpcf7-list-item-label {
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+
+    &:focus {
+        // +.download-form_checkbox-text {
+        +.wpcf7-list-item-label {
+            &::before {
+                border-color: #023E78;
+            }
+        }
+    }
+}
+
+// .download-form_checkbox-text {
+.wpcf7-list-item-label {
+    position: relative;
+    padding-left: 30px;
+    font-size: 14px;
+    font-weight: 500;
+
+    @include mq(pc) {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &::before {
+        width: 28px;
+        height: 28px;
+        border-radius: 1px;
+        border: 2px solid #3E3E3E;
+        transition: all 0.5s;
+
+        @include mq(pc) {
+            margin-top: 0;
+            width: 32px;
+            height: 32px;
+        }
+    }
+
+    &::after {
+        width: 11.607178514138537px;
+        height: 6.359131286577761px;
+        background: url(../img/download/check.svg) no-repeat center center / contain;
+        left: 8px;
+        margin-top: 2px;
+        opacity: 0;
+
+        @include mq(pc) {
+            margin-top: -0.8px;
+            width: 14px;
+            height: 14px;
+        }
+    }
+
+    a {
+        margin-inline: 10px 6px;
+        // margin-left: 10px;
+        font-weight: 700;
+        text-decoration: underline;
+        transition: all 0.5s;
+
+        &:hover {
+            color: #023E78;
+        }
+    }
+}
+
+.download-form_button {
+    margin-top: 41px;
+    text-align: center;
+
+    @include mq(pc) {
+        margin-top: 44px;
+    }
+}
+
+.download-form_submit {
+    background-color: #fff;
+    border: 1px solid #023E78;
+    color: #023E78;
+    padding: 20px 10px;
+    width: 100%;
+
+    @include mq(pc) {
+        max-width: 336px;
+        padding-block: 21px;
+        font-size: 16px;
+    }
+}

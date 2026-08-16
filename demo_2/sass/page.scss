@@ -1,0 +1,237 @@
+@use "sass:map";
+
+// ================================================================================
+// responsive
+// ================================================================================
+$breakpoints: (
+    1280: "screen and (min-width: 1280px)",
+    980: "screen and (min-width: 980px)",
+    pc: "screen and (min-width: 768px)",
+    sp: "screen and (max-width: 767px)",
+);
+
+@mixin mq($breakpoint: pc) {
+    @media #{map.get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+
+// ================================================================================
+// page
+// ================================================================================
+.page-content {
+    margin-top: 74px;
+    margin-bottom: 100px;
+
+    @include mq(pc) {
+        margin-top: 84px;
+        margin-bottom: 160px;
+    }
+}
+
+.page-inner {
+    margin-inline: auto;
+    padding-inline: 5.4%;
+
+    @include mq(pc) {
+        // padding-inline: 7%;
+        padding-inline: 40px;
+        max-width: calc(1100px + 80px);
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.page-item-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-item-tag {
+    span {
+        font-size: 14px;
+        color: #E61264;
+        border: 1px solid #E61264;
+        padding: 7px 23px;
+    }
+}
+
+.page-ttl {
+    margin-top: 28px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.32;
+    color: #1a1a1a;
+
+    @include mq(pc) {
+        font-size: 24px;
+    }
+}
+
+.page-item_img {
+    margin-top: 24px;
+    width: 100%;
+
+    @include mq(pc) {
+        width: 100%;
+    }
+
+    img {
+        height: 47vw;
+        object-fit: cover;
+
+        @include mq(pc) {
+            height: 31.2vw;
+            max-height: 400px;
+        }
+    }
+}
+
+.entry-body {
+    margin-top: 20px;
+
+    @include mq(pc) {
+        margin-top: 39px;
+    }
+}
+
+.entry-body h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #023E78;
+    padding: 11px 20px 9px 19px;
+    border-left: 6px solid #023E78;
+    margin-bottom: 16px;
+
+    @include mq(pc) {
+        padding: 10px 20px 10px 20px;
+    }
+}
+
+.entry-body h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #023E78;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #023E78;
+    margin-top: 30px;
+    margin-bottom: 16px;
+
+    @include mq(pc) {
+        margin-top: 28px;
+    }
+}
+
+.entry-body h4 {
+    margin-top: 30px;
+    margin-bottom: 13px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #023E78;
+
+    @include mq(pc) {
+        margin-bottom: 14px;
+    }
+}
+
+.entry-body ol {
+    margin-top: 15px;
+    margin-left: 6.4%;
+    list-style: decimal;
+
+    @include mq(pc) {
+        margin-top: 13px;
+        margin-left: 2.7%;
+    }
+}
+
+.entry-body ul {
+    margin-top: 16px;
+    margin-bottom: 14px;
+    margin-left: 6.4%;
+    list-style: disc;
+
+    @include mq(pc) {
+        margin-left: 2.7%;
+        margin-bottom: 16px;
+    }
+}
+
+// .entry-body p {
+//     margin-top: 16px;
+// }
+
+.entry-body a {
+    text-decoration: underline;
+    color: #023E78;
+}
+
+.entry-body blockquote {
+    margin-top: 14px;
+    position: relative;
+    width: 100%;
+    background-color: #F8F8F8;
+    padding: 29px 35px 8px 31px;
+    border-left: 4px solid #023E78;
+
+    @include mq(pc) {
+        margin-top: 12px;
+        padding-top: 32px;
+        padding-bottom: 31px;
+        // width: 85%;
+        width: 100%;
+        max-width: 646px;
+    }
+
+    &::before {
+        position: absolute;
+        top: 15px;
+        left: 17px;
+        content: "";
+        background: url(../img/news/quote.svg) no-repeat center center / contain;
+        width: 55.076171875px;
+        height: 47.435546875px;
+    }
+
+    &>p {
+        margin-top: 0;
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.page-pagination {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.prev-btn,
+.next-btn {
+    border: 1px solid #023E78;
+    border-radius: 4px;
+    padding: 6px 10px;
+    text-align: center;
+    width: 100%;
+    max-width: 114px;
+
+    @include mq(pc) {
+        padding-block: 5px;
+    }
+
+    a {
+        font-size: 14px;
+        color: #023E78;
+    }
+}
+
+.prev-btn{
+    margin-right: auto;
+}
+
+.next-btn{
+    margin-left: auto;
+}
