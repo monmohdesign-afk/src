@@ -1,0 +1,296 @@
+@use "sass:map";
+
+// ================================================================================
+// responsive
+// ================================================================================
+$breakpoints: (
+    1200: "screen and (min-width: 1200px)",
+    1000: "screen and (min-width: 1000px)",
+    900: "screen and (min-width: 900px)",
+    pc: "screen and (min-width: 768px)",
+    sp: "screen and (max-width: 767px)",
+);
+
+@mixin mq($breakpoint: pc) {
+    @media #{map.get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+
+// ================================================================================
+// contents
+// ================================================================================
+// ========================================
+// page-header
+// ========================================
+.guide-header_inner {
+    background-image: url(../img/page-guide_top-sp.png);
+
+    @include mq(pc) {
+        background-image: url(../img/page-guide_top-pc.png);
+    }
+}
+
+
+// ========================================
+// tags
+// ========================================
+.tags {
+    margin-top: 60px;
+
+    @include mq(pc) {
+        margin-top: 80px;
+    }
+}
+
+.tags-wrap {
+    display: grid;
+    gap: 30px;
+
+    &:nth-of-type(n+2) {
+        margin-top: 80px;
+    }
+}
+
+.tags-group {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+
+    p {
+        font-weight: 700;
+        line-height: 1.5;
+        letter-spacing: 0.8px;
+        text-align: center;
+    }
+}
+
+.tags-group_ttl {
+    font-size: 20px;
+
+    @include mq(pc) {
+        font-size: 28px;
+    }
+}
+
+.tags-group_tag {
+    padding: 7px 12px;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 24px;
+}
+
+.general-tag {
+    background-color: #1391E6;
+}
+
+.special-tag {
+    background-color: #EE5A6D;
+}
+
+.tags-lists {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include mq(pc) {
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+}
+
+.tags-lists {
+    li {
+        a {
+            padding: 14px 19px;
+            border: solid 1px #1391E6;
+            border-radius: 12px;
+            display: block;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1.5;
+            letter-spacing: 0.8px;
+            color: #1391E6;
+            text-align: center;
+            transition: all 0.3s;
+
+            @include mq(pc) {
+                padding: 16px 30px;
+                font-size: 24px;
+                width: auto;
+                border-width: 2px;
+            }
+
+            &:hover {
+                padding-block: 7px 27px;
+                background-color: #DFF1FD;
+                position: relative;
+
+                &::after {
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    bottom: 7px;
+                    content: "";
+                    width: 20px;
+                    height: 20px;
+                    mask-image: url(../img/guide-tag-arrow.svg);
+                    mask-repeat: no-repeat;
+                    mask-position: center center;
+                    mask-size: contain;
+                    background-color: #1391E6;
+                }
+            }
+        }
+    }
+}
+
+
+// ========================================
+// medical
+// ========================================
+.medical {
+    margin-top: 100px;
+
+    @include mq(pc) {
+        margin-top: 160px;
+    }
+}
+
+.medical-cards {
+    margin-block: 40px 8px;
+
+    @include mq(pc) {
+        margin-block: 60px 0;
+    }
+}
+
+.medical-card {
+    padding: 20px;
+    border-radius: 20px;
+    width: 100%;
+    background-color: #fff;
+    position: relative;
+
+    @include mq(pc) {
+        padding: 60px;
+    }
+
+    &:nth-of-type(n+2) {
+        margin-top: 40px;
+    }
+
+    &::before {
+        position: absolute;
+        top: 0;
+        right: 20px;
+        content: "";
+        width: 80px;
+        height: 60px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+
+        @include mq(pc) {
+            right: 60px;
+            width: 100px;
+            height: 80px;
+        }
+    }
+}
+
+.general-card {
+    &::before {
+        background-image: url(../img/general-tag-sp.png);
+
+        @include mq(pc) {
+            background-image: url(../img/general-tag-pc.png);
+        }
+    }
+}
+
+.medical-card_head {
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    border-bottom: solid 1px #888;
+
+    @include mq(pc) {
+        padding-bottom: 36px;
+        flex-direction: row;
+        align-items: center;
+        gap: 40px;
+    }
+}
+
+.medical-card_head-mainttl {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 0.8px;
+
+    @include mq(pc) {
+        font-size: 28px;
+        line-height: 1.5;
+    }
+}
+
+.medical-card_head-subttl {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.8px;
+    color: #1391E6;
+
+    @include mq(pc) {
+        line-height: 1.5;
+    }
+}
+
+.medical-card_bottom {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include mq(pc) {
+        margin-top: 36px;
+        flex-direction: row;
+        gap: 40px;
+    }
+}
+
+.medical-card_bottom-left,
+.medical-card_bottom-right {
+    width: 100%;
+}
+
+// ====================
+// general
+// ====================
+.general-card {
+    &::before {
+        background-image: url(../img/general-tag-sp.png);
+
+        @include mq(pc) {
+            background-image: url(../img/general-tag-pc.png);
+        }
+    }
+}
+
+// ====================
+// special
+// ====================
+.special-card {
+    &::before {
+        background-image: url(../img/special-tag-sp.png);
+
+        @include mq(pc) {
+            background-image: url(../img/special-tag-pc.png);
+        }
+    }
+}

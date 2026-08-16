@@ -1,0 +1,114 @@
+@use "sass:map";
+
+// ================================================================================
+// responsive
+// ================================================================================
+$breakpoints: (
+    1200: "screen and (min-width: 1200px)",
+    1000: "screen and (min-width: 1000px)",
+    900: "screen and (min-width: 900px)",
+    pc: "screen and (min-width: 768px)",
+    sp: "screen and (max-width: 767px)",
+);
+
+@mixin mq($breakpoint: pc) {
+    @media #{map.get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+
+// ================================================================================
+// contents
+// ================================================================================
+// ========================================
+// page-header
+// ========================================
+.about-header_inner {
+    background-image: url(../img/page-about_top-sp.png);
+
+    @include mq(pc) {
+        background-image: url(../img/page-about_top-pc.png);
+    }
+}
+
+
+// ========================================
+// pol-fea
+// ========================================
+.pol-fea {
+    @include mq(pc) {
+        margin-top: 80px;
+        height: 1386px;
+    }
+}
+
+.pol-fea_bg {
+    top: 70px;
+
+    @include mq(pc) {
+        top: 102px;
+    }
+}
+
+.pol-fea_wrap {
+    margin-top: 150px;
+
+    @include mq(pc) {
+        margin-top: 240px;
+    }
+
+    &:nth-of-type(n+2) {
+        margin-top: 100px;
+
+        @include mq(pc) {
+            margin-top: 18.21vw;
+            margin-top: min(223px, 17.43vw);
+            margin-inline: 40px 0;
+            flex-direction: row-reverse;
+            float: right;
+            text-align: left;
+        }
+    }
+}
+
+.pol-fea_wrap02-left {
+    margin-left: 40px;
+    margin-right: 0;
+    text-align: right;
+
+    @include mq(pc) {
+        margin-left: 0;
+    }
+}
+
+
+// ========================================
+// gallery
+// ========================================
+.gallery{
+    @include mq(pc) {
+        margin-block: 160px;
+    }
+}
+
+.gallery-cards {
+    gap: 11px;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include mq(pc) {
+        gap: 24px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.gallery_img {
+    width: 44.27vw;
+    height: 100%;
+    overflow: hidden;
+
+    @include mq(pc) {
+        width: auto;
+        height: auto;
+    }
+}
